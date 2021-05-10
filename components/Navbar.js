@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import Link from "next/link";
+import { BsSearch, BsHeart } from "react-icons/bs";
+import NavbarLink from "./NavbarLink";
 
 const Container = styled.div`
   width: 100%;
@@ -26,17 +27,19 @@ const LogoContainer = styled.div`
 `;
 
 const Logo = styled.div`
-  width: 40px;
+  width: 100px;
   height: 40px;
   position: relative;
   img {
-    object-fit: cover;
+    object-fit: contain;
   }
 `;
 
 const NavLinks = styled.ul`
   display: flex;
   flex: 2;
+  height: 100%;
+  align-items: center;
 
   li:first-child {
     margin-left: 0;
@@ -45,14 +48,6 @@ const NavLinks = styled.ul`
   li {
     margin-left: 60px;
   }
-`;
-
-const NavLink = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  font-family: "Segoe UI", sans-serif;
-  color: ${(props) => props.theme.colors.textColorPrimary};
 `;
 
 const NavButtons = styled.div`
@@ -85,77 +80,27 @@ function Navbar() {
         <LogoContainer>
           <Logo>
             <Image
-              src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620620565/Polygon_13_vwhiio.svg"
+              src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620672673/Polygon_11_c6pgu9.png"
               alt="Moebel Logo"
               layout="fill"
             />
           </Logo>
         </LogoContainer>
         <NavLinks>
-          <li>
-            <Link href="/">
-              <a>
-                <NavLink>Möbel</NavLink>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>
-                <NavLink>Garten</NavLink>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>
-                <NavLink>Leuchten</NavLink>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>
-                <NavLink>Accessoires</NavLink>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>
-                <NavLink>Textilien</NavLink>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>
-                <NavLink>Küche</NavLink>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <a>
-                <NavLink>Marken</NavLink>
-              </a>
-            </Link>
-          </li>
+          <NavbarLink value="Möbel" />
+          <NavbarLink value="Garten" />
+          <NavbarLink value="Leuchten" />
+          <NavbarLink value="Accessoires" />
+          <NavbarLink value="Textilien" />
+          <NavbarLink value="Küche" />
+          <NavbarLink value="Marken" />
         </NavLinks>
         <NavButtons>
           <NavButton>
-            <Image
-              src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620621488/search_kkwew7.svg"
-              alt="Search"
-              layout="fill"
-            />
+            <BsSearch size={20} color="#9C9C9C" />
           </NavButton>
           <NavButton>
-            <Image
-              src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620621489/heart_tborkb.svg"
-              alt="Fav"
-              layout="fill"
-            />
+            <BsHeart size={20} color="#9C9C9C" />
           </NavButton>
         </NavButtons>
       </Navigation>
