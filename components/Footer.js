@@ -21,6 +21,10 @@ const Navigation = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 1250px) {
+    height: unset;
+    flex-direction: column;
+  }
 `;
 
 const LogoContainer = styled.div``;
@@ -37,8 +41,11 @@ const Logo = styled.div`
 const NavLinks = styled.ul`
   display: flex;
   width: 100%;
-  padding: 0 60px;
+  padding: 0 10px;
   justify-content: space-between;
+  @media (max-width: 1250px) {
+    flex-direction: column;
+  }
 `;
 
 const NavLink = styled.div`
@@ -47,6 +54,11 @@ const NavLink = styled.div`
   font-size: 16px;
   font-family: "Segoe UI", sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
+  @media (max-width: 1250px) {
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 function Footer() {

@@ -25,6 +25,7 @@ ul {
 
 body {
   background-color: #f9f9f9;
+  min-width: 360px;
 }
 
 button {

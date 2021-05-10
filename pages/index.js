@@ -30,15 +30,17 @@ const TwoCols = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
 `;
 
 const Cols = styled.div`
   width: 49.5%;
+  min-width: 340px;
   background-color: #a1a896;
   box-shadow: 3px 3px 10px #00000029;
   height: 440px;
   border-radius: 20px;
+  margin-bottom: 20px;
 `;
 
 const Header = styled.h3`
@@ -76,6 +78,7 @@ const SearchCols = styled.div`
 
 const SearchCol = styled.div`
   width: 49.5%;
+  min-width: 340px;
   background-color: #f9f9f9;
   box-shadow: 3px 3px 10px #0000001a;
   height: 440px;
