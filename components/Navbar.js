@@ -82,10 +82,13 @@ const NavButtons = styled.div`
 `;
 
 const MenuButtons = styled.div`
-  display: flex;
   align-items: center;
   justify-content: flex-start;
   flex: 1;
+  display: none;
+  @media (max-width: 1250px) {
+    display: flex;
+  }
 `;
 
 const NavButton = styled.button`
@@ -135,6 +138,28 @@ const SearchBar = styled.div`
   padding: 0 10px;
 
   @media (max-width: 1250px) {
+    display: none;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+`;
+
+const SearchBarMob = styled.div`
+  width: 95%;
+  max-width: 600px;
+  height: 40px;
+  position: relative;
+  box-shadow: 3px 3px 10px #0000001a;
+  border-radius: 10px;
+  background-color: ${(props) => props.theme.colors.backgroundPrimary};
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  display: none;
+  @media (max-width: 1250px) {
+    display: flex;
     width: 100%;
     max-width: calc(100% - 20px);
     margin-bottom: 15px;
@@ -176,9 +201,34 @@ const SearchDiv = styled.div`
   }
 
   @media (max-width: 1250px) {
-    top: 120px;
+    display: none;
+  }
+`;
+
+const SearchDivMob = styled.div`
+  width: 95%;
+  max-width: 600px;
+  height: 150px;
+  position: fixed;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 3px 3px 10px #0000001a;
+  border-radius: 10px;
+  background-color: ${(props) => props.theme.colors.backgroundPrimary};
+  display: none;
+  flex-direction: column;
+  padding: 12px 0;
+
+  svg {
+    cursor: pointer;
+  }
+
+  @media (max-width: 1250px) {
     width: 100%;
+    display: flex;
     max-width: calc(100% - 20px);
+    margin-bottom: 15px;
   }
 `;
 
@@ -238,7 +288,10 @@ function Navbar() {
               <BsX
                 size={25}
                 color="#9C9C9C"
-                onClick={() => setOpenSearch(false)}
+                onClick={() => {
+                  setOpenSearch(false);
+                  setInputValue(null);
+                }}
               />
             </SearchBar>
             {inputValue && (
@@ -290,12 +343,12 @@ function Navbar() {
           </NavButton>
         </NavButtons>
       </Navigation>
-      <SearchBar>
+      <SearchBarMob>
         <Search onChange={(e) => setInputValue(e.target.value)}></Search>
         <BsSearch size={20} color="#9C9C9C" />
-      </SearchBar>
+      </SearchBarMob>
       {inputValue && (
-        <SearchDiv>
+        <SearchDivMob>
           <ShList>
             <ShItem>
               <Link href="/">
@@ -328,7 +381,7 @@ function Navbar() {
               </Link>
             </ShItem>
           </ShList>
-        </SearchDiv>
+        </SearchDivMob>
       )}
     </Container>
   );

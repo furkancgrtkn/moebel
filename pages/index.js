@@ -41,6 +41,9 @@ const Cols = styled.div`
   height: 440px;
   border-radius: 20px;
   margin-bottom: 20px;
+  @media (max-width: 1250px) {
+    width: 100%;
+  }
 `;
 
 const Header = styled.h3`
@@ -84,6 +87,9 @@ const SearchCol = styled.div`
   height: 440px;
   border-radius: 20px;
   margin-bottom: 10px;
+  @media (max-width: 1250px) {
+    width: 100%;
+  }
 `;
 
 const SearchColHead = styled.h3`
