@@ -100,7 +100,7 @@ const MenuLeftList = styled.ul`
   padding: 20px 40px;
   justify-content: center;
   li {
-    margin-bottom: 25px;
+    margin-bottom: 23px;
   }
 
   li:last-child {
@@ -141,7 +141,7 @@ const MenuRightListItem = styled.li`
   margin-right: 30px;
   width: 155px;
   margin-left: 0 !important;
-  margin-bottom: 25px;
+  margin-bottom: 23px;
 `;
 
 const MenuRightLink = styled.div`
