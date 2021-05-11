@@ -97,10 +97,10 @@ const MenuLeftList = styled.ul`
   display: flex;
   flex: 2;
   flex-direction: column;
-  padding: 20px 40px;
+  padding: 18px 40px;
   justify-content: center;
   li {
-    margin-bottom: 23px;
+    margin-bottom: 25px;
   }
 
   li:last-child {
@@ -113,7 +113,7 @@ const MenuRight = styled.div`
   height: 292px;
   overflow-y: auto;
   margin-right: 5px;
-  padding: 20px 25px 20px 30px;
+  padding: 18px 25px 0px 30px;
   ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -141,7 +141,7 @@ const MenuRightListItem = styled.li`
   margin-right: 30px;
   width: 155px;
   margin-left: 0 !important;
-  margin-bottom: 23px;
+  margin-bottom: 25px;
 `;
 
 const MenuRightLink = styled.div`
@@ -404,7 +404,7 @@ function NavbarLink({ value }) {
           ],
         },
         {
-          value: "LED-Leuchten",
+          value: "Leuchtmittel",
           data: [
             { value: "Smart Home Leuchtmittel" },
             { value: "LED- Leuchtmittel" },
