@@ -11,6 +11,9 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  svg {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+  }
 `;
 
 const Navigation = styled.nav`
@@ -335,17 +338,17 @@ function Navbar() {
         <NavButtons>
           {!openSearch && (
             <NavButton onClick={() => setOpenSearch(true)}>
-              <BsSearch size={20} color="#9C9C9C" />
+              <BsSearch size={24} color="#9C9C9C" />
             </NavButton>
           )}
           <NavButton openSearch={openSearch}>
-            <BsHeart size={20} color="#9C9C9C" />
+            <BsHeart size={24} color="#9C9C9C" />
           </NavButton>
         </NavButtons>
       </Navigation>
       <SearchBarMob>
         <Search onChange={(e) => setInputValue(e.target.value)}></Search>
-        <BsSearch size={20} color="#9C9C9C" />
+        <BsSearch size={24} color="#9C9C9C" />
       </SearchBarMob>
       {inputValue && (
         <SearchDivMob>

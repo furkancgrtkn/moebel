@@ -9,7 +9,7 @@ SwiperCore.use([Scrollbar]);
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1240px;
+  max-width: 1246px;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ const TwoCols = styled.div`
 `;
 
 const Cols = styled.div`
-  width: 49.5%;
+  width: 49.6%;
   min-width: 340px;
   background-color: #a1a896;
   box-shadow: 3px 3px 10px #00000029;
@@ -55,7 +55,7 @@ const Header = styled.h3`
 `;
 
 const SlideItem = styled.div`
-  width: 300px;
+  width: 299px;
   height: calc(100% - 30px);
   margin-bottom: 20px;
   box-shadow: 3px 3px 10px #0000001a;
@@ -80,7 +80,7 @@ const SearchCols = styled.div`
 `;
 
 const SearchCol = styled.div`
-  width: 49.5%;
+  width: 49.6%;
   min-width: 340px;
   background-color: #f9f9f9;
   box-shadow: 3px 3px 10px #0000001a;

@@ -107,7 +107,7 @@ label {
 
 .swiperCenter.swiper-container-horizontal > .swiper-scrollbar {
   height: 12px;
-  width: 49%;
+  width: 49.8%;
   left: 50%;
   transform: translateX(-50%);
 }
