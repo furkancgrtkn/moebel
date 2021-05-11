@@ -50,7 +50,7 @@ const Header = styled.h3`
   text-align: center;
   margin-bottom: 10px;
   font-size: 18px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
 `;
 
@@ -96,8 +96,7 @@ const SearchColHead = styled.h3`
   text-align: center;
   margin: 15px 0;
   font-size: 18px;
-  font-family: "Segoe UI", sans-serif;
-
+  font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
 `;
 

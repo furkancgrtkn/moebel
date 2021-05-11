@@ -1,4 +1,4 @@
-@import url("http://fonts.cdnfonts.com/css/segoe-ui-4");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
 
 * {
   box-sizing: border-box;
@@ -65,7 +65,8 @@ input,
 b,
 textarea,
 label {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
 }
 
 #nprogress .bar {

@@ -13,7 +13,8 @@ const MenuLeftLink = styled.div`
   display: flex;
   align-items: center;
   font-size: 14px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
   position: relative;
 `;
