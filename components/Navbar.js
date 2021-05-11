@@ -177,7 +177,7 @@ const Search = styled.input`
   width: calc(100% - 65px);
   font-size: 16px;
   height: 40px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
   border: none;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
@@ -189,7 +189,7 @@ const SearchDiv = styled.div`
   max-width: 600px;
   height: 150px;
   position: absolute;
-  top: 65px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 3px 3px 10px #0000001a;
@@ -246,7 +246,7 @@ const ShItem = styled.li`
   display: flex;
   align-items: center;
   font-size: 14px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
   padding: 0 12px;
   margin-bottom: 8px;
@@ -260,7 +260,7 @@ function Navbar() {
       <Navigation>
         <MenuButtons>
           <MenuButton openSearch={openSearch}>
-            <BsList size={25} color="#9C9C9C" />
+            <BsList size={30} color="#9C9C9C" />
           </MenuButton>
         </MenuButtons>
         <LogoContainer>
