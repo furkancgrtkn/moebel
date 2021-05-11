@@ -188,7 +188,7 @@ const SearchDiv = styled.div`
   width: 95%;
   max-width: 600px;
   height: 150px;
-  position: fixed;
+  position: absolute;
   top: 65px;
   left: 50%;
   transform: translateX(-50%);
@@ -212,7 +212,7 @@ const SearchDivMob = styled.div`
   width: 95%;
   max-width: 600px;
   height: 150px;
-  position: fixed;
+  position: absolute;
   top: 65px;
   left: 50%;
   transform: translateX(-50%);
@@ -280,7 +280,6 @@ function Navbar() {
             <NavbarLink value="Accessoires" />
             <NavbarLink value="Textilien" />
             <NavbarLink value="Küche" />
-            <NavbarLink value="Marken" />
           </NavLinks>
         )}
         {openSearch && (
