@@ -13,6 +13,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 const theme = {
   colors: {
     textColorPrimary: "#9C9C9C",
+    texColorPrimaryLight: "#BFBFBF",
     backgroundPrimary: "#f9f9f9",
     backgroundSecondary: "#F5F5F5",
   },

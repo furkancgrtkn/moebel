@@ -857,6 +857,11 @@ function Navbar() {
                       setMenuData(
                         menuData.filter((d) => d.value === e.value)[0].data
                       );
+                    } else {
+                      router.push("/store/ecksofas");
+                      setOpenHam(false);
+                      document.getElementsByTagName("body")[0].style =
+                        "overflow:unset";
                     }
                   }
                 }}

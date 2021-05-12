@@ -26,6 +26,7 @@ ul {
 body {
   background-color: #f9f9f9;
   min-width: 360px;
+  overflow-x: hidden;
 }
 
 button {
@@ -70,12 +71,12 @@ label {
 }
 
 #nprogress .bar {
-  background: #f17b2d !important;
+  background: #f18740 !important;
   height: 6px !important;
 }
 
 #nprogress .peg {
-  box-shadow: 0 0 10px #f17b2d, 0 0 5px #f17b2d !important;
+  box-shadow: 0 0 10px #f18740, 0 0 5px #f18740 !important;
 }
 
 #nprogress .spinner {

@@ -48,7 +48,7 @@ const Cols = styled.div`
 
 const Header = styled.h3`
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 18px;
   font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
@@ -120,8 +120,9 @@ const PartnerSwip = styled.div`
 const LongText = styled.p`
   margin-bottom: 20px;
   font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.08px;
   font-family: "Segoe UI", sans-serif;
-  line-height: 20px;
   color: ${(props) => props.theme.colors.textColorPrimary};
 `;
 

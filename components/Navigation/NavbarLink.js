@@ -170,7 +170,7 @@ function NavbarLink({ value, activeSub }) {
   );
   return (
     <NavLinkItem>
-      <Link href="/">
+      <Link href="/store/ecksofas">
         <a>
           <NavLink>
             {value}
@@ -200,7 +200,7 @@ function NavbarLink({ value, activeSub }) {
               .leftMenus.filter((v) => v.value === active)[0]
               .data.map((d, idx) => (
                 <MenuRightListItem key={idx}>
-                  <Link href="/">
+                  <Link href="/store/ecksofas">
                     <a>
                       <MenuRightLink>
                         {d.value}

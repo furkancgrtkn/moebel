@@ -49,7 +49,7 @@ function MenuLeftItem({ value, setActiveSub, active }) {
 
   return (
     <MenuLeftItemLi ref={hoverRef}>
-      <Link href="/">
+      <Link href="/store/ecksofas">
         <a>
           <MenuLeftLink>
             <FlowSpan>{value}</FlowSpan>
