@@ -267,25 +267,28 @@ const HamMenu = styled.div`
   left: 0;
   top: 65px;
   z-index: 99;
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 20px 0;
   overflow: auto;
   ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 8px;
+    height: 8px;
   }
   ::-webkit-scrollbar-thumb {
     background: #aeaeae;
-    border-radius: 5px;
+    border-radius: 8px;
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #999999;
   }
   ::-webkit-scrollbar-track {
     background: #f9f9f9;
-    border-radius: 5px;
+    border-radius: 8px;
     box-shadow: inset 0px 0px 2px #e0e0e0;
+  }
+  @media (max-width: 1250px) {
+    display: flex;
   }
 `;
 

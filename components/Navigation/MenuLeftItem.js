@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import useHover from "./utils/useHover";
+import useHover from "../utils/useHover";
 
 const MenuLeftItemLi = styled.li`
   width: 100%;
@@ -10,11 +10,6 @@ const MenuLeftItemLi = styled.li`
 `;
 
 const MenuLeftLink = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
   position: relative;
 `;
@@ -31,6 +26,19 @@ const HoverSpan = styled.span`
   border-radius: 100%;
 `;
 
+const FlowSpan = styled.div`
+  font-size: 14px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: ${(props) => props.theme.colors.textColorPrimary};
+  position: relative;
+  display: block;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
 function MenuLeftItem({ value, setActiveSub, active }) {
   const [hoverRef, isHovered] = useHover();
   useEffect(() => {
@@ -44,7 +52,7 @@ function MenuLeftItem({ value, setActiveSub, active }) {
       <Link href="/">
         <a>
           <MenuLeftLink>
-            {value}
+            <FlowSpan>{value}</FlowSpan>
             {(isHovered || active === value) && <HoverSpan></HoverSpan>}
           </MenuLeftLink>
         </a>
