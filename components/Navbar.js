@@ -189,7 +189,7 @@ const SearchDiv = styled.div`
   max-width: 600px;
   height: 150px;
   position: absolute;
-  top: 120px;
+  top: 65px;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 3px 3px 10px #0000001a;
@@ -213,7 +213,7 @@ const SearchDivMob = styled.div`
   max-width: 600px;
   height: 150px;
   position: absolute;
-  top: 65px;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 3px 3px 10px #0000001a;
@@ -252,17 +252,49 @@ const ShItem = styled.li`
   margin-bottom: 8px;
 `;
 
+const HamMenu = styled.div`
+  width: 100%;
+  height: calc(100vh - 64px);
+  background-color: ${(props) => props.theme.colors.backgroundPrimary};
+  position: fixed;
+  left: 0;
+  top: 65px;
+  z-index: 99;
+`;
+
 function Navbar() {
   const [openSearch, setOpenSearch] = useState(false);
+  const [openHam, setOpenHam] = useState(false);
   const [inputValue, setInputValue] = useState();
   return (
     <Container>
       <Navigation>
         <MenuButtons>
-          <MenuButton openSearch={openSearch}>
-            <BsList size={30} color="#9C9C9C" />
-          </MenuButton>
+          {!openHam ? (
+            <MenuButton
+              onClick={() => {
+                setOpenHam(true);
+                document.getElementsByTagName("body")[0].style =
+                  "overflow:hidden";
+              }}
+              openSearch={openSearch}
+            >
+              <BsList size={30} color="#9C9C9C" />
+            </MenuButton>
+          ) : (
+            <MenuButton
+              onClick={() => {
+                setOpenHam(false);
+                document.getElementsByTagName("body")[0].style =
+                  "overflow:unset";
+              }}
+              openSearch={openSearch}
+            >
+              <BsX size={30} color="#9C9C9C" />
+            </MenuButton>
+          )}
         </MenuButtons>
+        {openHam && <HamMenu></HamMenu>}
         <LogoContainer>
           <Logo>
             <Image
