@@ -10,7 +10,7 @@ const ContainerWrapper = styled.div`
       css`
         height: 100vh;
         display: ${(props) => (props.filts ? "block" : "none")};
-        position: absolute;
+        position: fixed;
         z-index: 89;
         top: 0px;
         right: 0px;
