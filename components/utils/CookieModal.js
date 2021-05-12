@@ -9,7 +9,7 @@ const CookieDiv = styled.div`
   margin-left: 0 !important;
   display: flex;
   position: fixed;
-  bottom: 60px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
