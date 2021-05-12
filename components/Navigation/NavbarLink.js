@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import React, { useState } from "react";
+import styled from "styled-components";
 import Link from "next/link";
 import MenuLeftItem from "./MenuLeftItem";
 const Menu = styled.div`
@@ -9,6 +9,7 @@ const Menu = styled.div`
   transform: translateX(-50%);
   width: 814px;
   height: 0px;
+  z-index: 199;
   box-shadow: 3px 3px 10px #0000001a;
   border-radius: 20px;
   visibility: hidden;

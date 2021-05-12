@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import {
   BsSearch,
@@ -39,6 +40,7 @@ const Navigation = styled.nav`
 
 const LogoContainer = styled.div`
   flex: 1;
+  cursor: pointer;
   @media (max-width: 1250px) {
     display: flex;
     align-items: center;
@@ -198,6 +200,7 @@ const SearchDiv = styled.div`
   position: absolute;
   top: 65px;
   left: 50%;
+  z-index: 96;
   transform: translateX(-50%);
   box-shadow: 3px 3px 10px #0000001a;
   border-radius: 10px;
@@ -220,6 +223,7 @@ const SearchDivMob = styled.div`
   max-width: 600px;
   height: 150px;
   position: absolute;
+  z-index: 96;
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
@@ -809,7 +813,7 @@ function Navbar() {
   ];
 
   const [menuData, setMenuData] = useState(activeSub);
-
+  const router = useRouter();
   return (
     <Container>
       <Navigation>
@@ -863,7 +867,7 @@ function Navbar() {
             ))}
           </HamMenu>
         )}
-        <LogoContainer>
+        <LogoContainer onClick={() => router.push("/")}>
           <Logo>
             <Image
               src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620672673/Polygon_11_c6pgu9.png"

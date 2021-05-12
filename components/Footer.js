@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Container = styled.div`
   width: 100%;
@@ -27,7 +28,9 @@ const Navigation = styled.nav`
   }
 `;
 
-const LogoContainer = styled.div``;
+const LogoContainer = styled.div`
+  cursor: pointer;
+`;
 
 const Logo = styled.div`
   width: 100px;
@@ -62,10 +65,12 @@ const NavLink = styled.div`
 `;
 
 function Footer() {
+  const router = useRouter();
+
   return (
     <Container>
       <Navigation>
-        <LogoContainer>
+        <LogoContainer onClick={() => router.push("/")}>
           <Logo>
             <Image
               src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620672673/Polygon_11_c6pgu9.png"
