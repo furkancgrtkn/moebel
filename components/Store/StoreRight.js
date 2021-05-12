@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import { BsArrowLeftRight, BsChevronUp } from "react-icons/bs";
 import { GiSettingsKnobs } from "react-icons/gi";
+import useOutsideClick from "../utils/useOutsideClick";
 
 const Container = styled.div`
   width: calc(100% - 330px);
@@ -88,7 +89,7 @@ const BreadCrumbItem = styled.button`
 
   @media (max-width: 1250px) {
     display: block;
-    max-width: 60px;
+    max-width: 48px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -166,14 +167,20 @@ const DInner = styled.button`
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
+  span {
+    margin-right: 4px;
+  }
   svg {
     transform: rotate(-90deg);
     margin-right: 8px;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
   }
   @media (max-width: 1250px) {
-    width: 205px;
+    width: 155px;
     margin-right: 0px;
+    span {
+      display: none;
+    }
   }
 `;
 
@@ -181,6 +188,7 @@ const DMenu = styled.div`
   box-shadow: 3px 3px 10px #0000001a;
   border-radius: 10px;
   width: 215px;
+  background-color: ${(props) => props.theme.colors.backgroundPrimary};
   height: 94px;
   position: absolute;
   top: 50px;
@@ -274,6 +282,10 @@ const GoTop = styled.button`
 function StoreRight({ filts, setFilts }) {
   const [dpo, setDPO] = useState(false);
   const [dpoC, setDPOC] = useState("Preis absteigend");
+  const ref = useRef();
+  useOutsideClick(ref, () => {
+    setDPO(false);
+  });
   return (
     <Container>
       <TopS>
@@ -300,10 +312,10 @@ function StoreRight({ filts, setFilts }) {
             <GiSettingsKnobs size={18} color="#9C9C9C" />
           </Filters>
           <Sale>Sale</Sale>
-          <Dropdown>
+          <Dropdown ref={ref}>
             <DInner onClick={() => setDPO(!dpo)}>
               <BsArrowLeftRight size={18} color="#9C9C9C" />
-              Sortieren: {dpoC}
+              <span>Sortieren: </span> {dpoC}
             </DInner>
             {dpo && (
               <DMenu>

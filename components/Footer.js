@@ -11,7 +11,7 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const Navigation = styled.nav`
+const Navigation = styled.footer`
   width: 100%;
   max-width: 1240px;
   height: 100px;

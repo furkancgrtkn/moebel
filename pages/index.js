@@ -35,7 +35,7 @@ const TwoCols = styled.div`
 
 const Cols = styled.div`
   width: 49.6%;
-  min-width: 340px;
+  min-width: 300px;
   background-color: #a1a896;
   box-shadow: 3px 3px 10px #00000029;
   height: 440px;
@@ -81,7 +81,7 @@ const SearchCols = styled.div`
 
 const SearchCol = styled.div`
   width: 49.6%;
-  min-width: 340px;
+  min-width: 300px;
   background-color: #f9f9f9;
   box-shadow: 3px 3px 10px #0000001a;
   height: 440px;

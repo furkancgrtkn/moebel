@@ -31,7 +31,7 @@ const Container = styled.div`
   flex-direction: column;
   @media (max-width: 1250px) {
     display: ${(props) => (props.filts ? "flex" : "none")};
-    width: 285px;
+    width: 255px;
 
     ${(props) =>
       props.filts &&
@@ -116,6 +116,7 @@ const Colors = styled.div`
   overflow: hidden;
   @media (max-width: 1250px) {
     padding-right: 20px;
+    height: 250px;
   }
 `;
 
@@ -334,7 +335,6 @@ function StoreLeft({ filts, setFilts }) {
         >
           <BsX size={30} color="#9C9C9C" />
         </FiltersClose>
-
         <Categories>
           <CategoriesInner>
             <CategoriesUL>

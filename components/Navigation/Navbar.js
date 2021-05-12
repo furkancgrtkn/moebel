@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import useOutsideClick from "../utils/useOutsideClick";
 import Image from "next/image";
 import {
   BsSearch,
@@ -309,9 +310,9 @@ const HamMenuItem = styled.div`
 function Navbar() {
   const [openSearch, setOpenSearch] = useState(false);
   const [openHam, setOpenHam] = useState(false);
-  const [inputValue, setInputValue] = useState();
+  const [inputValue, setInputValue] = useState(undefined);
+  const [inputValue2, setInputValue2] = useState(undefined);
   const [onMenu, setOnMenu] = useState();
-
   const activeSub = [
     {
       value: "Möbel",
@@ -811,9 +812,22 @@ function Navbar() {
       ],
     },
   ];
-
   const [menuData, setMenuData] = useState(activeSub);
   const router = useRouter();
+  const ref = useRef();
+  const ref2 = useRef();
+  const refInputs = useRef();
+
+  useEffect(() => {}, [inputValue, inputValue2]);
+  useOutsideClick(ref, () => {
+    setInputValue2(undefined);
+    refInputs.current.value = "";
+  });
+  useOutsideClick(ref2, () => {
+    setInputValue(undefined);
+    refInputs.current.value = "";
+  });
+
   return (
     <Container>
       <Navigation>
@@ -895,18 +909,22 @@ function Navbar() {
           <>
             <SearchBar>
               <BsSearch size={20} color="#9C9C9C" />
-              <Search onChange={(e) => setInputValue(e.target.value)}></Search>
+              <Search
+                ref={refInputs}
+                onChange={(e) => setInputValue(e.target.value)}
+              ></Search>
               <BsX
                 size={25}
                 color="#9C9C9C"
                 onClick={() => {
                   setOpenSearch(false);
-                  setInputValue(null);
+                  setInputValue(undefined);
+                  setInputValue2(undefined);
                 }}
               />
             </SearchBar>
             {inputValue && (
-              <SearchDiv>
+              <SearchDiv ref={ref2}>
                 <ShList>
                   <ShItem>
                     <Link href="/">
@@ -969,11 +987,14 @@ function Navbar() {
         </NavButtons>
       </Navigation>
       <SearchBarMob>
-        <Search onChange={(e) => setInputValue(e.target.value)}></Search>
+        <Search
+          ref={refInputs}
+          onChange={(e) => setInputValue2(e.target.value)}
+        ></Search>
         <BsSearch size={24} color="#9C9C9C" />
       </SearchBarMob>
-      {inputValue && (
-        <SearchDivMob>
+      {inputValue2 && (
+        <SearchDivMob ref={ref}>
           <ShList>
             <ShItem>
               <Link href="/">
