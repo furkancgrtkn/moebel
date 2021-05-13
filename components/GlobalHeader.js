@@ -5,7 +5,7 @@ const GHeader = styled.h2`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin-top: 10px;
   margin-bottom: 15px;
   font-size: 18px;
   font-family: "Nunito", sans-serif;
