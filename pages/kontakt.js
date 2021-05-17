@@ -4,7 +4,7 @@ import GlobalHeader from "../components/GlobalHeader";
 import Layout from "../components/Layout/Layout";
 const Container = styled.div`
   width: 100%;
-  max-width: 1246px;
+  max-width: 1245px;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ const Inputs = styled.div`
   input {
     width: 100%;
     height: 40px;
-    box-shadow: 3px 3px 10px #0000001a;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-bottom: 10px;
     font-family: "Nunito", sans-serif;
@@ -50,13 +50,14 @@ const Btn = styled.button`
   padding-top: 4px;
   display: flex;
   justify-content: center;
+  font-weight: 600;
   font-size: 14px;
   font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
   letter-spacing: 0.08px;
   align-items: center;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin: 10px auto;
 `;
@@ -67,7 +68,7 @@ const TextAreas = styled.div`
   textarea {
     width: 100%;
     height: 289px;
-    box-shadow: 3px 3px 10px #0000001a;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin-bottom: 10px;
     font-family: "Nunito", sans-serif;

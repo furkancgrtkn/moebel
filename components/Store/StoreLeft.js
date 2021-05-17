@@ -49,7 +49,7 @@ const Categories = styled.div`
   height: 346px;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
 `;
@@ -110,7 +110,7 @@ const Colors = styled.div`
   height: 210px;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 21px 34px;
   overflow: hidden;
@@ -151,7 +151,7 @@ const Prices = styled.div`
   height: 132px;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 21px 34px;
   overflow: hidden;
@@ -218,7 +218,7 @@ const Conts = styled.div`
   height: 346px;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
 `;
@@ -266,7 +266,7 @@ const FiltersClose = styled.button`
   align-items: center;
   width: 76px;
   height: 40px;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-right: 8px;
   position: fixed;
@@ -279,7 +279,7 @@ const FiltersClose = styled.button`
     margin-left: 8px;
   }
   svg {
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
   }
 `;
 

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import { BsArrowLeftRight, BsChevronUp } from "react-icons/bs";
+import { BsArrowLeftRight, BsChevronUp, BsGift } from "react-icons/bs";
 import { GiSettingsKnobs } from "react-icons/gi";
 import useOutsideClick from "../utils/useOutsideClick";
 
@@ -71,8 +71,21 @@ const BreadCrumb = styled.div`
       margin-left: 0;
     }
   }
-  @media (max-width: 1250px) {
+  @media (max-width: 650px) {
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    max-width: 280px;
+    button {
+      :nth-child(4) {
+        margin-left: 0px;
+        margin-top: 6px;
+      }
+      :nth-child(5) {
+        margin-top: 6px;
+      }
+    }
   }
 `;
 
@@ -84,15 +97,16 @@ const BreadCrumbItem = styled.button`
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   color: ${(props) => props.theme.colors.texColorPrimaryLight};
   border: none;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-left: 2px;
+  margin-right: 2px;
 
-  @media (max-width: 1250px) {
-    display: block;
+  @media (max-width: 650px) {
+    /* margin-top: 4px; */
+    /* display: block;
     max-width: 48px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap; */
   }
 `;
 
@@ -113,17 +127,30 @@ const Sale = styled.button`
   align-items: center;
   width: 76px;
   height: 40px;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   color: #e99d9d;
   margin-right: 8px;
+  svg {
+    display: none;
+  }
   @media (max-width: 1250px) {
-    width: 65px;
+    svg {
+      display: block;
+      margin-right: 6px;
+      margin-bottom: 2px;
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.1));
+    }
+    width: 74px;
     margin-right: 0px;
     margin-left: 8px;
+    font-size: 13px;
+    padding-top: 1px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
   }
 `;
 
@@ -134,15 +161,22 @@ const Filters = styled.button`
   align-items: center;
   width: 76px;
   height: 40px;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-right: 8px;
   svg {
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
+  }
+  span {
+    font-size: 12px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    color: ${(props) => props.theme.colors.textColorPrimary};
+    margin-left: 8px;
   }
   @media (max-width: 1250px) {
     display: flex;
-    width: 40px;
+    width: 105px;
     margin-right: 0px;
     margin-left: 8px;
   }
@@ -161,7 +195,7 @@ const DInner = styled.button`
   padding: 0 13px;
   width: 215px;
   height: 40px;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   font-size: 12px;
   font-family: "Nunito", sans-serif;
@@ -169,14 +203,18 @@ const DInner = styled.button`
   color: ${(props) => props.theme.colors.textColorPrimary};
   span {
     margin-right: 4px;
+    font-size: 12px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    color: ${(props) => props.theme.colors.textColorPrimary};
   }
   svg {
     transform: rotate(-90deg);
     margin-right: 8px;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.16));
   }
   @media (max-width: 1250px) {
-    width: 155px;
+    width: 105px;
     margin-right: 0px;
     span {
       display: none;
@@ -185,7 +223,7 @@ const DInner = styled.button`
 `;
 
 const DMenu = styled.div`
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   width: 215px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
@@ -220,7 +258,7 @@ const Cards = styled.div`
 `;
 
 const Card = styled.div`
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   width: 299px;
   height: 350px;
@@ -236,7 +274,7 @@ const Card = styled.div`
 `;
 
 const SeeMore = styled.button`
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -253,7 +291,7 @@ const SeeMore = styled.button`
 `;
 
 const GoTop = styled.button`
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -274,12 +312,17 @@ const GoTop = styled.button`
     bottom: -20px;
     white-space: nowrap;
   }
+
+  svg {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
+  }
+
   @media (max-width: 1250px) {
     display: none;
   }
 `;
 
-function StoreRight({ filts, setFilts }) {
+function StoreRight({ setFilts }) {
   const [dpo, setDPO] = useState(false);
   const [dpoC, setDPOC] = useState("Preis absteigend");
   const ref = useRef();
@@ -294,10 +337,10 @@ function StoreRight({ filts, setFilts }) {
             Ecksofas <span>16853 Ergebnisse</span>
           </Header>
           <BreadCrumb>
-            <BreadCrumbItem>Startseite</BreadCrumbItem> {">"}
-            <BreadCrumbItem>Möbel</BreadCrumbItem> {">"}
-            <BreadCrumbItem>Wohnzimmer</BreadCrumbItem> {">"}
-            <BreadCrumbItem>Sofas & Couches</BreadCrumbItem> {">"}
+            <BreadCrumbItem>Startseite {" >"}</BreadCrumbItem>
+            <BreadCrumbItem>Möbel{" >"}</BreadCrumbItem>
+            <BreadCrumbItem>Wohnzimmer{" >"}</BreadCrumbItem>
+            <BreadCrumbItem>Sofas & Couches{" >"}</BreadCrumbItem>
             <BreadCrumbItem>Ecksofas</BreadCrumbItem>
           </BreadCrumb>
         </LeftS>
@@ -310,12 +353,16 @@ function StoreRight({ filts, setFilts }) {
             }}
           >
             <GiSettingsKnobs size={18} color="#9C9C9C" />
+            <span>Filtern</span>
           </Filters>
-          <Sale>Sale</Sale>
+          <Sale>
+            <BsGift size={16} color="#E99D9D" />
+            Sale
+          </Sale>
           <Dropdown ref={ref}>
             <DInner onClick={() => setDPO(!dpo)}>
               <BsArrowLeftRight size={18} color="#9C9C9C" />
-              <span>Sortieren: </span> {dpoC}
+              Sortieren <span>: {dpoC} </span>
             </DInner>
             {dpo && (
               <DMenu>

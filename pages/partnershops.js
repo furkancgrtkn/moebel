@@ -5,7 +5,7 @@ import Layout from "../components/Layout/Layout";
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1246px;
+  max-width: 1245px;
   display: flex;
   padding: 0 5px;
   flex-direction: column;
@@ -25,9 +25,9 @@ const Cards = styled.div`
 `;
 
 const Card = styled.div`
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  width: 196px;
+  width: 195.5px;
   height: 149px;
   background-color: #f0bcbc;
   margin: 5px;

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const ContainerEmpty = styled.div`
   width: 100%;
-  max-width: 1246px;
+  max-width: 1245px;
   display: flex;
   padding: 0 5px;
   flex-direction: column;
@@ -43,7 +43,7 @@ const ContainerEmpty = styled.div`
     letter-spacing: 0.08px;
     align-items: center;
     background-color: ${(props) => props.theme.colors.backgroundPrimary};
-    box-shadow: 3px 3px 10px #0000001a;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     border-radius: 15px;
     @media (max-width: 1250px) {
@@ -64,8 +64,8 @@ function Custom404() {
     <Layout>
       <ContainerEmpty>
         <Image
-          width="250"
-          height="230"
+          width="200"
+          height="184"
           alt="404error"
           src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620880704/cloud-lightning-rain_gg7r6q.svg"
         />

@@ -9,7 +9,7 @@ SwiperCore.use([Scrollbar]);
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1246px;
+  max-width: 1245px;
   padding: 0 10px;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ const TopBanner = styled.div`
   height: 440px;
   background-color: #eed0b3;
   border-radius: 20px;
-  box-shadow: 3px 3px 10px #00000029;
+  box-shadow: 3px 3px 6px #00000029;
   margin-bottom: 20px;
 `;
 
@@ -34,10 +34,10 @@ const TwoCols = styled.div`
 `;
 
 const Cols = styled.div`
-  width: 49.6%;
+  width: 49.55%;
   min-width: 300px;
   background-color: #a1a896;
-  box-shadow: 3px 3px 10px #00000029;
+  box-shadow: 3px 3px 6px #00000029;
   height: 440px;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -58,7 +58,7 @@ const SlideItem = styled.div`
   width: 299px;
   height: calc(100% - 30px);
   margin-bottom: 20px;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background-color: #9c9aca;
 `;
@@ -80,10 +80,10 @@ const SearchCols = styled.div`
 `;
 
 const SearchCol = styled.div`
-  width: 49.6%;
+  width: 49.55%;
   min-width: 300px;
   background-color: #f9f9f9;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   height: 440px;
   border-radius: 20px;
   margin-bottom: 10px;
@@ -101,10 +101,10 @@ const SearchColHead = styled.h3`
 `;
 
 const PartnerSlideItem = styled.div`
-  width: 300px;
+  width: 299px;
   height: calc(100% - 30px);
   margin-bottom: 20px;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   background-color: #f0bcbc;
 `;

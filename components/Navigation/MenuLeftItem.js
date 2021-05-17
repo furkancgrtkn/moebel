@@ -15,12 +15,12 @@ const MenuLeftLink = styled.div`
 `;
 
 const HoverSpan = styled.span`
-  width: 5px;
-  height: 5px;
-  box-shadow: 3px 3px 10px #00000040;
+  width: 6px;
+  height: 6px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
   background-color: #a0a0a0;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: -10px;
   transform: translateY(-50%);
   border-radius: 100%;

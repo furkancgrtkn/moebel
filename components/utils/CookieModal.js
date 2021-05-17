@@ -33,7 +33,7 @@ const CloseButton = styled.button`
   align-items: center;
   justify-content: center;
   display: flex;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin-left: auto;
 `;

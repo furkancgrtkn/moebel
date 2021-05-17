@@ -6,7 +6,7 @@ import { BsHeart } from "react-icons/bs";
 import GlobalHeader from "../components/GlobalHeader";
 const ContainerEmpty = styled.div`
   width: 100%;
-  max-width: 1246px;
+  max-width: 1245px;
   display: flex;
   padding: 0 5px;
   flex-direction: column;
@@ -34,7 +34,7 @@ const ContainerEmpty = styled.div`
   button {
     width: 196px;
     height: 50px;
-    padding-top: 4px;
+    padding-top: 2px;
     margin-top: 10px;
     display: flex;
     justify-content: center;
@@ -44,7 +44,7 @@ const ContainerEmpty = styled.div`
     letter-spacing: 0.08px;
     align-items: center;
     background-color: ${(props) => props.theme.colors.backgroundPrimary};
-    box-shadow: 3px 3px 10px #0000001a;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     @media (max-width: 1250px) {
       font-size: 18px;
@@ -82,7 +82,7 @@ const Cards = styled.div`
 `;
 
 const Card = styled.div`
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   width: 299px;
   height: 350px;
@@ -100,7 +100,7 @@ function wunschliste() {
     <Layout>
       {empty ? (
         <ContainerEmpty>
-          <BsHeart size={250} color="#E0E0E0" />
+          <BsHeart size={200} color="#E0E0E0" />
           <p>Ihre Wunschliste ist leer.</p>
           <Link href="/">
             <a>

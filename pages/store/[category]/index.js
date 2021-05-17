@@ -6,7 +6,7 @@ import StoreRight from "../../../components/Store/StoreRight";
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1246px;
+  max-width: 1245px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   margin: auto;
   display: flex;

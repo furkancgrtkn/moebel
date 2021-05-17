@@ -4,7 +4,7 @@ import GlobalHeader from "../components/GlobalHeader";
 import Layout from "../components/Layout/Layout";
 const Container = styled.div`
   width: 100%;
-  max-width: 1246px;
+  max-width: 1245px;
   padding: 0 10px;
   display: flex;
   flex-direction: column;

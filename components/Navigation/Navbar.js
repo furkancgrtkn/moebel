@@ -12,7 +12,6 @@ import {
 } from "react-icons/bs";
 import NavbarLink from "./NavbarLink";
 import Link from "next/link";
-
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -21,7 +20,7 @@ const Container = styled.div`
   flex-direction: column;
   user-select: none;
   svg {
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
   }
 `;
 
@@ -108,7 +107,7 @@ const NavButton = styled.button`
   width: 40px;
   height: 40px;
   position: relative;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   margin-right: ${(props) => props.openSearch && "0px !important"};
@@ -126,7 +125,7 @@ const MenuButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   margin-right: ${(props) => props.openSearch && "0px !important"};
@@ -142,7 +141,7 @@ const SearchBar = styled.div`
   max-width: 600px;
   height: 40px;
   position: relative;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   display: flex;
@@ -164,7 +163,7 @@ const SearchBarMob = styled.div`
   max-width: 600px;
   height: 40px;
   position: relative;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   align-items: center;
@@ -203,7 +202,7 @@ const SearchDiv = styled.div`
   left: 50%;
   z-index: 96;
   transform: translateX(-50%);
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   display: flex;
@@ -228,7 +227,7 @@ const SearchDivMob = styled.div`
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   display: none;
@@ -313,6 +312,7 @@ function Navbar() {
   const [inputValue, setInputValue] = useState(undefined);
   const [inputValue2, setInputValue2] = useState(undefined);
   const [onMenu, setOnMenu] = useState();
+
   const activeSub = [
     {
       value: "Möbel",
@@ -811,6 +811,10 @@ function Navbar() {
         },
       ],
     },
+    {
+      value: "Marken",
+      leftMenus: [],
+    },
   ];
   const [menuData, setMenuData] = useState(activeSub);
   const router = useRouter();
@@ -847,6 +851,7 @@ function Navbar() {
             <MenuButton
               onClick={() => {
                 setOpenHam(false);
+                setMenuData(activeSub);
                 document.getElementsByTagName("body")[0].style =
                   "overflow:unset";
               }}
@@ -862,20 +867,29 @@ function Navbar() {
               <HamMenuItem
                 onClick={() => {
                   setOnMenu(true);
-                  if (activeSub.some((k) => k.value === e.value)) {
-                    setMenuData(
-                      menuData.filter((d) => d.value === e.value)[0].leftMenus
-                    );
+                  if (e.value === "Marken") {
+                    router.push("/store/ecksofas");
+                    setOpenHam(false);
+                    setMenuData(activeSub);
+                    document.getElementsByTagName("body")[0].style =
+                      "overflow:unset";
                   } else {
-                    if (menuData[0].data) {
+                    if (activeSub.some((k) => k.value === e.value)) {
                       setMenuData(
-                        menuData.filter((d) => d.value === e.value)[0].data
+                        menuData.filter((d) => d.value === e.value)[0].leftMenus
                       );
                     } else {
-                      router.push("/store/ecksofas");
-                      setOpenHam(false);
-                      document.getElementsByTagName("body")[0].style =
-                        "overflow:unset";
+                      if (menuData[0].data) {
+                        setMenuData(
+                          menuData.filter((d) => d.value === e.value)[0].data
+                        );
+                      } else {
+                        router.push("/store/ecksofas");
+                        setOpenHam(false);
+                        setMenuData(activeSub);
+                        document.getElementsByTagName("body")[0].style =
+                          "overflow:unset";
+                      }
                     }
                   }
                 }}
@@ -903,6 +917,7 @@ function Navbar() {
             <NavbarLink value="Accessoires" activeSub={activeSub} />
             <NavbarLink value="Textilien" activeSub={activeSub} />
             <NavbarLink value="Küche" activeSub={activeSub} />
+            <NavbarLink value="Marken" activeSub={activeSub} />
           </NavLinks>
         )}
         {openSearch && (
@@ -963,7 +978,10 @@ function Navbar() {
         )}
         <NavButtons>
           {!openSearch && (
-            <NavButton onClick={() => setOpenSearch(true)}>
+            <NavButton
+              style={{ paddingTop: "1px" }}
+              onClick={() => setOpenSearch(true)}
+            >
               <BsSearch size={24} color="#9C9C9C" />
             </NavButton>
           )}
@@ -980,7 +998,7 @@ function Navbar() {
               </NavButton>
             )
           ) : (
-            <NavButton openSearch={openSearch}>
+            <NavButton style={{ paddingTop: "4px" }} openSearch={openSearch}>
               <BsHeart size={24} color="#9C9C9C" />
             </NavButton>
           )}

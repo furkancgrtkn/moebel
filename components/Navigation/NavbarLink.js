@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import useHover from "../utils/useHover";
 import MenuLeftItem from "./MenuLeftItem";
 const Menu = styled.div`
   position: absolute;
@@ -10,7 +11,7 @@ const Menu = styled.div`
   width: 814px;
   height: 0px;
   z-index: 199;
-  box-shadow: 3px 3px 10px #0000001a;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   visibility: hidden;
   display: flex;
@@ -42,9 +43,9 @@ const MenuLeft = styled.div`
 `;
 
 const HoverSpan = styled.span`
-  width: 5px;
-  height: 5px;
-  box-shadow: 3px 3px 10px #00000040;
+  width: 6px;
+  height: 6px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
   visibility: hidden;
   background-color: #a0a0a0;
   position: absolute;
@@ -73,7 +74,6 @@ const NavLinkItem = styled.li`
     ${Menu} {
       visibility: visible;
       height: 292px;
-      transition: 0.4s;
       transition-property: height, visibility;
     }
     ${HoverSpan} {
@@ -83,12 +83,12 @@ const NavLinkItem = styled.li`
 `;
 
 const HoverSpanLeft = styled.span`
-  width: 5px;
-  height: 5px;
-  box-shadow: 3px 3px 10px #00000040;
+  width: 6px;
+  height: 6px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
   background-color: #a0a0a0;
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: -10px;
   transform: translateY(-50%);
   display: none;
@@ -144,6 +144,12 @@ const MenuRightListItem = styled.li`
   width: 155px;
   margin-left: 0 !important;
   margin-bottom: 25px;
+  position: relative;
+  :hover {
+    ${HoverSpanLeft} {
+      display: block;
+    }
+  }
 `;
 
 const MenuRightLink = styled.div`
@@ -157,62 +163,66 @@ const MenuRightLink = styled.div`
   text-overflow: ellipsis;
   color: ${(props) => props.theme.colors.textColorPrimary};
   position: relative;
-  :hover {
-    ${HoverSpanLeft} {
-      display: block;
-    }
-  }
 `;
 
 function NavbarLink({ value, activeSub }) {
   const [active, setActive] = useState(
-    activeSub.filter((val) => val.value === value)[0].leftMenus[0].value
+    activeSub.filter((val) => val.value === value)[0].leftMenus[0]?.value
   );
+
+  const [hoverRefZ, isHover] = useHover();
+
+  useEffect(() => {
+    setActive(
+      activeSub.filter((val) => val.value === value)[0].leftMenus[0]?.value
+    );
+  }, [isHover]);
+
   return (
     <NavLinkItem>
       <Link href="/store/ecksofas">
         <a>
-          <NavLink>
+          <NavLink ref={hoverRefZ}>
             {value}
             <HoverSpan></HoverSpan>
           </NavLink>
         </a>
       </Link>
-      <Menu>
-        <MenuLeft>
-          <MenuLeftList>
-            {activeSub
-              .filter((val) => val.value === value)[0]
-              .leftMenus.map((e, idx) => (
-                <MenuLeftItem
-                  key={idx}
-                  value={e.value}
-                  active={active}
-                  setActiveSub={setActive}
-                />
-              ))}
-          </MenuLeftList>
-        </MenuLeft>
-        <MenuRight>
-          <MenuRightList>
-            {activeSub
-              .filter((val) => val.value === value)[0]
-              .leftMenus.filter((v) => v.value === active)[0]
-              .data.map((d, idx) => (
-                <MenuRightListItem key={idx}>
-                  <Link href="/store/ecksofas">
-                    <a>
-                      <MenuRightLink>
-                        {d.value}
-                        <HoverSpanLeft></HoverSpanLeft>
-                      </MenuRightLink>
-                    </a>
-                  </Link>
-                </MenuRightListItem>
-              ))}
-          </MenuRightList>
-        </MenuRight>
-      </Menu>
+      {activeSub.filter((val) => val.value === value)[0].leftMenus[0] && (
+        <Menu>
+          <MenuLeft>
+            <MenuLeftList>
+              {activeSub
+                .filter((val) => val.value === value)[0]
+                .leftMenus.map((e, idx) => (
+                  <MenuLeftItem
+                    key={idx}
+                    value={e.value}
+                    active={active}
+                    setActiveSub={setActive}
+                  />
+                ))}
+            </MenuLeftList>
+          </MenuLeft>
+          <MenuRight>
+            <MenuRightList>
+              {activeSub
+                .filter((val) => val.value === value)[0]
+                .leftMenus.filter((v) => v.value === active)[0]
+                .data.map((d, idx) => (
+                  <MenuRightListItem key={idx}>
+                    <Link href="/store/ecksofas">
+                      <a>
+                        <MenuRightLink>{d.value}</MenuRightLink>
+                      </a>
+                    </Link>
+                    <HoverSpanLeft></HoverSpanLeft>
+                  </MenuRightListItem>
+                ))}
+            </MenuRightList>
+          </MenuRight>
+        </Menu>
+      )}
     </NavLinkItem>
   );
 }
