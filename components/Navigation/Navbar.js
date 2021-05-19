@@ -998,7 +998,11 @@ function Navbar() {
               </NavButton>
             )
           ) : (
-            <NavButton style={{ paddingTop: "4px" }} openSearch={openSearch}>
+            <NavButton
+              onClick={() => router.push("/wunschliste")}
+              style={{ paddingTop: "4px" }}
+              openSearch={openSearch}
+            >
               <BsHeart size={24} color="#9C9C9C" />
             </NavButton>
           )}

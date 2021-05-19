@@ -81,35 +81,35 @@ function Footer() {
         </LogoContainer>
         <NavLinks>
           <li>
-            <Link href="/">
+            <Link href="/impressum">
               <a>
                 <NavLink>Impressum</NavLink>
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/kontakt">
               <a>
                 <NavLink>Kontakt</NavLink>
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/nutzungsbedingungen">
               <a>
                 <NavLink>Nutzungsbedingungen</NavLink>
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/datenschutzerklarung">
               <a>
                 <NavLink>Datenschutz</NavLink>
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/sitemap">
               <a>
                 <NavLink>Sitemap</NavLink>
               </a>

@@ -31,8 +31,8 @@ const Card = styled.div`
   height: 149px;
   background-color: #f0bcbc;
   margin: 5px;
-  @media (max-width: 400px) {
-    width: 70.3%;
+  @media (max-width: 500px) {
+    width: 47.3%;
     margin-left: auto;
     margin-right: auto;
   }
