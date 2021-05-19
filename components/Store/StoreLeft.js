@@ -46,7 +46,6 @@ const Container = styled.div`
 
 const Categories = styled.div`
   width: 100%;
-  height: 346px;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
@@ -55,29 +54,11 @@ const Categories = styled.div`
 `;
 
 const CategoriesInner = styled.div`
-  width: 90%;
+  width: 100%;
   border-radius: 10px;
-  overflow-y: auto;
-  height: 306px;
   padding: 0 34px;
   margin-top: 21px;
-
-  ::-webkit-scrollbar {
-    width: 9px;
-    height: 9px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #aeaeae;
-    border-radius: 9px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #999999;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f9f9f9;
-    border-radius: 9px;
-    box-shadow: inset 0px 0px 2px #e0e0e0;
-  }
+  margin-bottom: 15px;
 `;
 
 const CategoriesUL = styled.ul`
@@ -192,9 +173,7 @@ const InputDiv = styled.div`
   font-family: "Nunito", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  cursor: default;
   user-select: none;
-  pointer-events: none;
   color: ${(props) => props.theme.colors.textColorPrimary};
 `;
 
@@ -210,7 +189,6 @@ const EInput = styled.input`
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   color: ${(props) => props.theme.colors.textColorPrimary};
   margin-right: 5px;
-  cursor: default;
 `;
 
 const Conts = styled.div`
@@ -320,7 +298,7 @@ function StoreLeft({ filts, setFilts }) {
     },
   ];
 
-  const STEP = 0.1;
+  const STEP = 1;
   const MIN = 0;
   const MAX = 100;
   const [values, setValues] = useState([25, 75]);
@@ -457,10 +435,46 @@ function StoreLeft({ filts, setFilts }) {
             />
             <Inputs>
               <InputDiv>
-                <EInput readOnly value={values[0].toFixed(1)}></EInput>€
+                <EInput
+                  type="number"
+                  min={MIN}
+                  max={MAX}
+                  onChange={(e) =>
+                    setValues([
+                      e.target.value > values[1]
+                        ? values[1]
+                        : e.target.value > MAX
+                        ? MAX
+                        : e.target.value < MIN
+                        ? MIN
+                        : e.target.value,
+                      values[1],
+                    ])
+                  }
+                  value={values[0]}
+                ></EInput>
+                €
               </InputDiv>
               <InputDiv>
-                <EInput readOnly value={values[1].toFixed(1)}></EInput>€
+                <EInput
+                  type="number"
+                  min={MIN}
+                  max={MAX}
+                  onChange={(e) =>
+                    setValues([
+                      values[0],
+                      e.target.value < values[0]
+                        ? values[0]
+                        : e.target.value > MAX
+                        ? MAX
+                        : e.target.value < MIN
+                        ? MIN
+                        : e.target.value,
+                    ])
+                  }
+                  value={values[1]}
+                ></EInput>
+                €
               </InputDiv>
             </Inputs>
           </div>

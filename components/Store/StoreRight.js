@@ -1,9 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { BsArrowLeftRight, BsChevronUp, BsGift } from "react-icons/bs";
 import { GiSettingsKnobs } from "react-icons/gi";
 import useOutsideClick from "../utils/useOutsideClick";
-
+import useScrollPosition from "../utils/useScrollPosition.js";
 const Container = styled.div`
   width: calc(100% - 330px);
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
@@ -266,9 +266,14 @@ const Card = styled.div`
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
 
   @media (max-width: 1250px) {
+    width: calc((100% / 3) - 7px);
+  }
+
+  @media (max-width: 850px) {
     width: 49.3%;
   }
-  @media (max-width: 750px) {
+
+  @media (max-width: 550px) {
     width: 100%;
   }
 `;
@@ -298,6 +303,7 @@ const GoTop = styled.button`
   justify-content: center;
   width: 40px;
   height: 40px;
+  background: white;
   position: absolute;
   right: 0;
   bottom: -80px;
@@ -329,6 +335,26 @@ function StoreRight({ setFilts }) {
   useOutsideClick(ref, () => {
     setDPO(false);
   });
+
+  const scrollPos = useScrollPosition();
+  useEffect(() => {
+    if (window) {
+      const goTopIcon = document.getElementById("goTop");
+      const goTopIconSpan = document.getElementById("goTopSpan");
+      if (scrollPos > 1151) {
+        goTopIcon.style = `position:fixed; bottom:${50}px; right:${
+          (window.innerWidth - 1242) / 2
+        }px`;
+        if (scrollPos > 1260) {
+          goTopIconSpan.style = `opacity:0; transition:0.4s;`;
+        } else {
+          goTopIconSpan.style = ``;
+        }
+      } else {
+        goTopIcon.style = ``;
+      }
+    }
+  }, [scrollPos]);
   return (
     <Container>
       <TopS>
@@ -411,13 +437,9 @@ function StoreRight({ setFilts }) {
         <Card></Card>
         <Card></Card>
         <Card></Card>
-        <GoTop>
-          <BsChevronUp
-            onClick={() => window.scrollTo(0, 0)}
-            size={25}
-            color="#9C9C9C"
-          />
-          <span>Nach oben</span>
+        <GoTop onClick={() => window.scrollTo(0, 0)} id="goTop">
+          <BsChevronUp size={25} color="#9C9C9C" />
+          <span id="goTopSpan">Nach oben</span>
         </GoTop>
       </Cards>
       <SeeMore>Mehr laden</SeeMore>

@@ -55,10 +55,10 @@ const Header = styled.h3`
 `;
 
 const SlideItem = styled.div`
-  width: 299px;
+  width: 298.5px;
   height: calc(100% - 30px);
   margin-bottom: 20px;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   background-color: #9c9aca;
 `;
@@ -101,10 +101,10 @@ const SearchColHead = styled.h3`
 `;
 
 const PartnerSlideItem = styled.div`
-  width: 299px;
+  width: 298.5px;
   height: calc(100% - 30px);
   margin-bottom: 20px;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   background-color: #f0bcbc;
 `;
@@ -161,6 +161,15 @@ export default function Home() {
             <SwiperSlide>
               <SlideItem></SlideItem>
             </SwiperSlide>
+            <SwiperSlide>
+              <SlideItem></SlideItem>
+            </SwiperSlide>
+            <SwiperSlide>
+              <SlideItem></SlideItem>
+            </SwiperSlide>
+            <SwiperSlide>
+              <SlideItem></SlideItem>
+            </SwiperSlide>
           </Swiper>
         </CenterSwip>
         <Header>Beliebte Suchanfragen</Header>
@@ -192,6 +201,15 @@ export default function Home() {
             scrollbar={true}
             className="swiperCenter"
           >
+            <SwiperSlide>
+              <PartnerSlideItem></PartnerSlideItem>
+            </SwiperSlide>
+            <SwiperSlide>
+              <PartnerSlideItem></PartnerSlideItem>
+            </SwiperSlide>
+            <SwiperSlide>
+              <PartnerSlideItem></PartnerSlideItem>
+            </SwiperSlide>
             <SwiperSlide>
               <PartnerSlideItem></PartnerSlideItem>
             </SwiperSlide>

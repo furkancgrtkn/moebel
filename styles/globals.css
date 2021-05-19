@@ -114,13 +114,24 @@ label {
 }
 
 .swiperCenter .swiper-scrollbar-drag {
-  background-color: #9c9c9c;
-  height: 10px;
+  background-color: #999999;
+  height: 9px;
 }
 
 .swiperCenter .swiper-scrollbar {
   background-color: #f9f9f9;
-  height: 10px;
+  height: 9px;
+  border: 1px solid #aeaeae1c;
+}
 
-  border: 1px solid #aeaeae4d;
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
