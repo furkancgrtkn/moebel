@@ -312,7 +312,7 @@ function Navbar() {
   const [inputValue, setInputValue] = useState(undefined);
   const [inputValue2, setInputValue2] = useState(undefined);
   const [onMenu, setOnMenu] = useState();
-
+  const [beforeState, setBeforeState] = useState();
   const activeSub = [
     {
       value: "Möbel",
@@ -852,6 +852,7 @@ function Navbar() {
               onClick={() => {
                 setOpenHam(false);
                 setMenuData(activeSub);
+                setOnMenu(null);
                 document.getElementsByTagName("body")[0].style =
                   "overflow:unset";
               }}
@@ -875,11 +876,13 @@ function Navbar() {
                       "overflow:unset";
                   } else {
                     if (activeSub.some((k) => k.value === e.value)) {
+                      setBeforeState(menuData);
                       setMenuData(
                         menuData.filter((d) => d.value === e.value)[0].leftMenus
                       );
                     } else {
                       if (menuData[0].data) {
+                        setBeforeState(menuData);
                         setMenuData(
                           menuData.filter((d) => d.value === e.value)[0].data
                         );
@@ -989,8 +992,11 @@ function Navbar() {
             onMenu && (
               <NavButton
                 onClick={() => {
-                  setMenuData(activeSub);
-                  setOnMenu(null);
+                  setBeforeState(activeSub);
+                  setMenuData(beforeState);
+                  if (activeSub[0].value === beforeState[0].value) {
+                    setOnMenu(null);
+                  }
                 }}
                 openSearch={openSearch}
               >
