@@ -26,6 +26,7 @@ export default function App({ Component, pageProps }) {
       .querySelector(":root")
       .style.setProperty("--vh", window.innerHeight / 100 + "px");
     if (window) {
+      window.scrollTo(0, 0);
       window.addEventListener("resize", () => {
         document
           .querySelector(":root")
