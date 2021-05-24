@@ -273,7 +273,7 @@ const HamMenu = styled.div`
   z-index: 99;
   display: none;
   flex-direction: column;
-  padding: 20px 0;
+  padding: 0px 0px 20px 0;
   overflow: auto;
   ::-webkit-scrollbar {
     width: 8px;
