@@ -1,4 +1,5 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
+import { useEffect } from "react";
 import "../styles/globals.css";
 import Router from "next/router";
 import NProgress from "nprogress";
@@ -20,6 +21,18 @@ const theme = {
 };
 
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    document
+      .querySelector(":root")
+      .style.setProperty("--vh", window.innerHeight / 100 + "px");
+    if (window) {
+      window.addEventListener("resize", () => {
+        document
+          .querySelector(":root")
+          .style.setProperty("--vh", window.innerHeight / 100 + "px");
+      });
+    }
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />

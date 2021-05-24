@@ -265,7 +265,8 @@ const ShItem = styled.li`
 
 const HamMenu = styled.div`
   width: 100%;
-  height: calc(100vh - 64px);
+  /* height: calc(100vh - 64px); */
+  height: calc(100 * var(--vh) - 64px);
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   position: fixed;
   left: 0;
