@@ -294,8 +294,8 @@ const HamMenu = styled.div`
   }
   @media (max-width: 1250px) {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    /*  justify-content: space-around;
+    align-items: center; */
   }
 `;
 
@@ -305,7 +305,7 @@ const HamMenuItem = styled.div`
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 14px;
-  /* margin: 45px 0; */
+  margin: 45px 0;
   cursor: pointer;
 `;
 
