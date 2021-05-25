@@ -3,9 +3,9 @@ import Layout from "../components/Layout/Layout";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import SwiperCore, { Scrollbar } from "swiper/core";
+import SwiperCore, { Scrollbar, Autoplay } from "swiper/core";
 
-SwiperCore.use([Scrollbar]);
+SwiperCore.use([Scrollbar, Autoplay]);
 
 const Container = styled.div`
   width: 100%;
@@ -145,6 +145,7 @@ export default function Home() {
             spaceBetween={10}
             scrollbar={true}
             className="swiperCenter"
+            autoplay={{ delay: 1800 }}
           >
             <SwiperSlide>
               <SlideItem></SlideItem>
@@ -198,6 +199,7 @@ export default function Home() {
           <Swiper
             slidesPerView="auto"
             spaceBetween={10}
+            autoplay={{ delay: 1800 }}
             scrollbar={true}
             className="swiperCenter"
           >

@@ -929,7 +929,7 @@ function Navbar() {
         {openSearch && (
           <>
             <SearchBar>
-              <BsSearch size={20} color="#9C9C9C" />
+              <BsSearch size={24} color="#9C9C9C" />
               <Search
                 ref={refInputs}
                 onChange={(e) => setInputValue(e.target.value)}

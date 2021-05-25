@@ -115,8 +115,9 @@ const RightS = styled.div`
   display: flex;
   margin-top: 15px;
   @media (max-width: 1250px) {
+    width: 100%;
     flex-direction: row-reverse;
-    justify-content: flex-end;
+    justify-content: center;
   }
 `;
 
@@ -176,7 +177,7 @@ const Filters = styled.button`
   }
   @media (max-width: 1250px) {
     display: flex;
-    width: 105px;
+    width: 104.5px;
     margin-right: 0px;
     margin-left: 8px;
   }
@@ -214,7 +215,7 @@ const DInner = styled.button`
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.16));
   }
   @media (max-width: 1250px) {
-    width: 105px;
+    width: 104.5px;
     margin-right: 0px;
     span {
       display: none;

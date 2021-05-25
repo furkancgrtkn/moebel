@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import { Range, getTrackBackground } from "react-range";
 import { BsX } from "react-icons/bs";
@@ -78,7 +78,8 @@ const CategoriesLi = styled.li``;
 
 const CategoriesLiSpan = styled.span`
   font-family: "Nunito", sans-serif;
-  font-size: 16px;
+  font-size: ${(props) => (props.header ? "16px" : "15px")};
+  position: relative;
   display: flex;
   margin-bottom: 6px;
   font-weight: 600;
@@ -88,7 +89,6 @@ const CategoriesLiSpan = styled.span`
 
 const Colors = styled.div`
   width: 100%;
-  height: 210px;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
@@ -108,11 +108,21 @@ const ColorsHead = styled.span`
   margin-bottom: 10px;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  span {
+    font-size: 15px;
+    color: ${(props) => props.theme.colors.texColorPrimaryLight};
+    user-select: none;
+    cursor: pointer;
+  }
 `;
 
 const ColorCont = styled.div`
   width: 100%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 `;
 
@@ -122,8 +132,10 @@ const Color = styled.div`
   box-shadow: 3px 3px 6px #00000029;
   border-radius: 100%;
   background-color: ${(props) => props.hex && props.hex};
-  margin-bottom: 10px;
-  margin-right: 10px;
+  /* margin-bottom: 10px;
+  margin-right: 10px; */
+  margin: 10px 5px;
+  margin-top: 0;
   cursor: pointer;
 `;
 
@@ -145,6 +157,15 @@ const GHead = styled.span`
   margin-bottom: 15px;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  span {
+    font-size: 15px;
+    color: ${(props) => props.theme.colors.texColorPrimaryLight};
+    user-select: none;
+    cursor: pointer;
+  }
 `;
 
 const GHead2 = styled.span`
@@ -155,6 +176,15 @@ const GHead2 = styled.span`
   padding: 21px 34px 0 34px;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  span {
+    font-size: 15px;
+    color: ${(props) => props.theme.colors.texColorPrimaryLight};
+    user-select: none;
+    cursor: pointer;
+  }
 `;
 
 const Inputs = styled.div`
@@ -228,11 +258,13 @@ const ContsInner = styled.div`
 
   li {
     font-family: "Nunito", sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 8px;
+    position: relative;
     font-weight: 400;
     color: ${(props) => props.theme.colors.textColorPrimary};
     cursor: pointer;
+    user-select: none;
     display: table;
   }
 `;
@@ -260,8 +292,27 @@ const FiltersClose = styled.button`
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
   }
 `;
+const HoverSpanLeft = styled.span`
+  width: 6px;
+  height: 6px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+  background-color: #a0a0a0;
+  position: absolute;
+  top: 50%;
+  transform: ${(props) =>
+    props.translateY ? `translateY(-4px)` : `translateY(-4.5px)`};
+  left: -15px;
+  display: ${(props) => (props.display ? "block" : "none")};
+  border-radius: 100%;
+`;
 
 function StoreLeft({ filts, setFilts }) {
+  const scRef = useRef();
+
+  useEffect(() => {
+    scRef.current.scrollTo(0, 0);
+  }, [filts]);
+
   const catData = [
     {
       value: "Möbel",
@@ -272,24 +323,16 @@ function StoreLeft({ filts, setFilts }) {
             {
               value: "Sofas & Couches",
               data: [
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
-                { value: "Ecksofas" },
+                { id: 1, value: "Ecksofas" },
+                { id: 2, value: "Ecksofas" },
+                { id: 3, value: "Ecksofas" },
+                { id: 4, value: "Ecksofas" },
+                { id: 5, value: "Ecksofas" },
+                { id: 6, value: "Ecksofas" },
+                { id: 7, value: "Ecksofas" },
+                { id: 8, value: "Ecksofas" },
+                { id: 9, value: "Ecksofas" },
+                { id: 10, value: "Ecksofas" },
               ],
             },
           ],
@@ -298,12 +341,19 @@ function StoreLeft({ filts, setFilts }) {
     },
   ];
 
+  const [cat, setCat] = useState();
+  const [farbe, setFarbe] = useState();
+  const [mark, setMark] = useState(false);
+  const [mat, setMat] = useState(false);
+  const [such, setSuch] = useState(false);
+
   const STEP = 1;
   const MIN = 0;
   const MAX = 100;
   const [values, setValues] = useState([25, 75]);
+
   return (
-    <ContainerWrapper filts={filts}>
+    <ContainerWrapper ref={scRef} filts={filts}>
       <Container filts={filts}>
         <FiltersClose
           onClick={() => {
@@ -318,21 +368,31 @@ function StoreLeft({ filts, setFilts }) {
             <CategoriesUL>
               {catData.map((e, idx) => (
                 <CategoriesLi key={idx}>
-                  <CategoriesLiSpan>{e.value}</CategoriesLiSpan>
+                  <CategoriesLiSpan header>{e.value}</CategoriesLiSpan>
                   <CategoriesULIn>
                     {e.leftMenus.map((d, ix) => (
                       <CategoriesLi key={ix}>
-                        <CategoriesLiSpan>{d.value}</CategoriesLiSpan>
+                        <CategoriesLiSpan header>{d.value}</CategoriesLiSpan>
                         <CategoriesULIn>
                           {d.data.map((k, i) => (
                             <CategoriesLi key={i}>
-                              <CategoriesLiSpan> {k.value}</CategoriesLiSpan>
+                              <CategoriesLiSpan header>
+                                {k.value}
+                              </CategoriesLiSpan>
                               <CategoriesULIn>
                                 {k.data.map((l, il) => (
                                   <CategoriesLi key={il}>
-                                    {" "}
-                                    <CategoriesLiSpan>
+                                    <CategoriesLiSpan
+                                      header
+                                      onClick={() =>
+                                        setCat(l.id === cat ? "" : l.id)
+                                      }
+                                    >
                                       {l.value}
+                                      <HoverSpanLeft
+                                        translateY
+                                        display={l.id === cat ? true : false}
+                                      ></HoverSpanLeft>
                                     </CategoriesLiSpan>
                                   </CategoriesLi>
                                 ))}
@@ -349,27 +409,92 @@ function StoreLeft({ filts, setFilts }) {
           </CategoriesInner>
         </Categories>
         <Colors>
-          <ColorsHead>Farbe</ColorsHead>
+          <ColorsHead>
+            Farbe <span>Zurücksetzen</span>
+          </ColorsHead>
           <ColorCont>
-            <Color hex="#EBB2B2" />
-            <Color hex="#64B59D" />
-            <Color hex="#B2B488" />
-            <Color hex="#A29EE0" />
-            <Color hex="#D96060" />
-            <Color hex="#F5E369" />
-            <Color hex="#967832" />
-            <Color hex="#9B9B9B" />
-            <Color hex="#525252" />
-            <Color hex="#AD6363" />
-            <Color hex="#B9E89E" />
-            <Color hex="#7B78C0" />
-            <Color hex="#4F7A4C" />
-            <Color hex="#B2E2EB" />
-            <Color hex="#E7B2EB" />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#EBB2B2"
+              value="#EBB2B2"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#64B59D"
+              value="#64B59D"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#B2B488"
+              value="#B2B488"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#A29EE0"
+              value="#A29EE0"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#D96060"
+              value="#D96060"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#F5E369"
+              value="#F5E369"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#967832"
+              value="#967832"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#9B9B9B"
+              value="#9B9B9B"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#525252"
+              value="#525252"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#AD6363"
+              value="#AD6363"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#B9E89E"
+              value="#B9E89E"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#7B78C0"
+              value="#7B78C0"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#4F7A4C"
+              value="#4F7A4C"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#B2E2EB"
+              value="#B2E2EB"
+            />
+            <Color
+              onClick={(e) => setFarbe(e.target.attributes.value.nodeValue)}
+              hex="#E7B2EB"
+              value="#E7B2EB"
+            />
           </ColorCont>
         </Colors>
         <Prices>
-          <GHead>Preis</GHead>
+          <GHead>
+            Preis
+            <span onClick={() => setValues([MIN, MAX])}>Zurücksetzen</span>
+          </GHead>
           <div
             style={{
               display: "flex",
@@ -483,69 +608,38 @@ function StoreLeft({ filts, setFilts }) {
           <GHead2>Suchvorschläge</GHead2>
           <ContsInner>
             <ul>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
-              <li>Doppelbett 180x200</li>
+              <li onClick={() => setSuch(!such)}>
+                Doppelbett 180x200
+                <HoverSpanLeft display={such}></HoverSpanLeft>
+              </li>
             </ul>
           </ContsInner>
         </Conts>
         <Conts>
-          <GHead2>Marke</GHead2>
+          <GHead2>
+            Marke
+            <span onClick={() => setMark(false)}>Zurücksetzen</span>
+          </GHead2>
           <ContsInner>
             <ul>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
-              <li>Ikea</li>
+              <li onClick={() => setMark(!mark)}>
+                Ikea
+                <HoverSpanLeft display={mark}></HoverSpanLeft>
+              </li>
             </ul>
           </ContsInner>
         </Conts>
         <Conts>
-          <GHead2>Material</GHead2>
+          <GHead2>
+            Material
+            <span onClick={() => setMat(false)}>Zurücksetzen</span>
+          </GHead2>
           <ContsInner>
             <ul>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
-              <li>Leder</li>
+              <li onClick={() => setMat(!mat)}>
+                Doppelbett 180x200
+                <HoverSpanLeft display={mat}></HoverSpanLeft>
+              </li>
             </ul>
           </ContsInner>
         </Conts>

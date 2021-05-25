@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import GlobalHeader from "../components/GlobalHeader";
 import Layout from "../components/Layout/Layout";
+import { BsX } from "react-icons/bs";
 const Container = styled.div`
   width: 100%;
   max-width: 1245px;
@@ -60,6 +61,7 @@ const Btn = styled.button`
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin: 10px auto;
+  margin-bottom: 20px;
 `;
 
 const TextAreas = styled.div`
@@ -85,12 +87,52 @@ const TextAreas = styled.div`
   }
 `;
 
+const ModalDiv = styled.div`
+  width: 95%;
+  max-width: 753px;
+  display: flex;
+  margin: auto;
+  z-index: 10;
+  background-color: ${(props) => props.theme.colors.backgroundPrimary};
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 6px 10px 5px 10px;
+  align-items: center;
+`;
+
+const Text = styled.p`
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-left: 20px;
+  color: ${(props) => props.theme.colors.texColorPrimaryLight};
+`;
+
+const CloseButton = styled.button`
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-left: auto;
+`;
+
 function Impressum() {
+  const [modal, setModal] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setModal(true);
+  };
   return (
     <Layout>
       <Container>
         <GlobalHeader value="Kontakt" />
-        <Forms>
+        <Forms onSubmit={(e) => handleSubmit(e)}>
           <Inputs>
             <input placeholder="Name eingeben"></input>
           </Inputs>
@@ -105,6 +147,18 @@ function Impressum() {
           </TextAreas>
           <Btn>Nachricht absenden</Btn>
         </Forms>
+        {modal && (
+          <ModalDiv>
+            <Text>Ihre Nachricht wurde versendet.</Text>
+            <CloseButton
+              onClick={() => {
+                setModal(false);
+              }}
+            >
+              <BsX size={20} color="#9C9C9C" />
+            </CloseButton>
+          </ModalDiv>
+        )}
       </Container>
     </Layout>
   );

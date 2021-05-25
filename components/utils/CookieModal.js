@@ -14,7 +14,7 @@ const CookieDiv = styled.div`
   transform: translateX(-50%);
   z-index: 10;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px #00000029;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 6px 10px 5px 10px;
   align-items: center;

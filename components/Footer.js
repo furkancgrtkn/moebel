@@ -54,7 +54,7 @@ const NavLinks = styled.ul`
 const NavLink = styled.div`
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Segoe UI", sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
   @media (max-width: 1250px) {
