@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from 'react';
+import styled from 'styled-components';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Container = styled.div`
   width: 100%;
@@ -55,7 +55,7 @@ const NavLink = styled.div`
   display: flex;
   align-items: center;
   font-size: 14px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
   @media (max-width: 1250px) {
     margin-top: 10px;
@@ -70,7 +70,7 @@ function Footer() {
   return (
     <Container>
       <Navigation>
-        <LogoContainer onClick={() => router.push("/")}>
+        <LogoContainer onClick={() => router.push('/')}>
           <Logo>
             <Image
               src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620672673/Polygon_11_c6pgu9.png"

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import Link from "next/link";
-import useHover from "../utils/useHover";
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
+import useHover from '../utils/useHover';
 
 const MenuLeftItemLi = styled.li`
   width: 100%;
@@ -30,7 +30,7 @@ const HoverSpan = styled.span`
 
 const FlowSpan = styled.div`
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
   position: relative;

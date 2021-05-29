@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import GlobalHeader from "../components/GlobalHeader";
-import Layout from "../components/Layout/Layout";
-import { BsX } from "react-icons/bs";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import GlobalHeader from '../components/GlobalHeader';
+import Layout from '../components/Layout/Layout';
+import { BsX } from 'react-icons/bs';
 const Container = styled.div`
   width: 100%;
   max-width: 1245px;
@@ -31,7 +31,7 @@ const Inputs = styled.div`
     box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
     border-radius: 10px;
     margin-bottom: 10px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: ${(props) => props.theme.colors.texColorPrimaryLight};
     letter-spacing: 0.08px;
     padding: 0 30px;
@@ -39,7 +39,7 @@ const Inputs = styled.div`
     background-color: ${(props) => props.theme.colors.backgroundPrimary};
 
     ::placeholder {
-      font-family: "Nunito", sans-serif;
+      font-family: 'Nunito', sans-serif;
       color: ${(props) => props.theme.colors.texColorPrimaryLight};
     }
   }
@@ -53,7 +53,7 @@ const Btn = styled.button`
   justify-content: center;
   font-weight: 600;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
   letter-spacing: 0.08px;
   align-items: center;
@@ -73,7 +73,7 @@ const TextAreas = styled.div`
     box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
     border-radius: 10px;
     margin-bottom: 10px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: ${(props) => props.theme.colors.texColorPrimaryLight};
     letter-spacing: 0.08px;
     padding: 20px 30px;
@@ -81,7 +81,7 @@ const TextAreas = styled.div`
     background-color: ${(props) => props.theme.colors.backgroundPrimary};
     resize: none;
     ::placeholder {
-      font-family: "Nunito", sans-serif;
+      font-family: 'Nunito', sans-serif;
       color: ${(props) => props.theme.colors.texColorPrimaryLight};
     }
   }
@@ -101,7 +101,7 @@ const ModalDiv = styled.div`
 `;
 
 const Text = styled.p`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 14px;
   padding-right: 5px;
   display: flex;
@@ -153,8 +153,7 @@ function Impressum() {
             <CloseButton
               onClick={() => {
                 setModal(false);
-              }}
-            >
+              }}>
               <BsX size={20} color="#9C9C9C" />
             </CloseButton>
           </ModalDiv>

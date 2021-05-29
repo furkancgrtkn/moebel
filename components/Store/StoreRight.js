@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
-import { BsArrowLeftRight, BsChevronUp, BsGift } from "react-icons/bs";
-import { GiSettingsKnobs } from "react-icons/gi";
-import useOutsideClick from "../utils/useOutsideClick";
-import useScrollPosition from "../utils/useScrollPosition.js";
+import React, { useState, useRef, useEffect } from 'react';
+import styled from 'styled-components';
+import { BsArrowLeftRight, BsChevronUp, BsGift } from 'react-icons/bs';
+import { GiSettingsKnobs } from 'react-icons/gi';
+import useOutsideClick from '../utils/useOutsideClick';
+import useScrollPosition from '../utils/useScrollPosition.js';
 const Container = styled.div`
   width: calc(100% - 330px);
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
@@ -36,7 +36,7 @@ const TopS = styled.div`
 `;
 
 const Header = styled.h2`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 26px;
   display: flex;
   margin-bottom: 7px;
@@ -61,7 +61,7 @@ const Header = styled.h2`
 const BreadCrumb = styled.div`
   display: flex;
   font-size: 12px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   color: ${(props) => props.theme.colors.texColorPrimaryLight};
@@ -92,7 +92,7 @@ const BreadCrumb = styled.div`
 const BreadCrumbItem = styled.button`
   display: flex;
   font-size: 12px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   color: ${(props) => props.theme.colors.texColorPrimaryLight};
@@ -131,7 +131,7 @@ const Sale = styled.button`
   box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   font-size: 16px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   color: #e99d9d;
   margin-right: 8px;
@@ -150,7 +150,7 @@ const Sale = styled.button`
     margin-left: 8px;
     font-size: 13px;
     padding-top: 1px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 600;
   }
 `;
@@ -170,7 +170,7 @@ const Filters = styled.button`
   }
   span {
     font-size: 12px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 600;
     color: ${(props) => props.theme.colors.textColorPrimary};
     margin-left: 8px;
@@ -199,13 +199,13 @@ const DInner = styled.button`
   box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   font-size: 12px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
   span {
     margin-right: 4px;
     font-size: 12px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 600;
     color: ${(props) => props.theme.colors.textColorPrimary};
   }
@@ -240,7 +240,7 @@ const DMenu = styled.div`
   justify-content: space-between;
   button {
     font-size: 12px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 600;
     color: ${(props) => props.theme.colors.textColorPrimary};
   }
@@ -290,7 +290,7 @@ const SeeMore = styled.button`
   margin: auto;
   margin-top: 40px;
   font-size: 16px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
   margin-bottom: 100px;
@@ -312,7 +312,7 @@ const GoTop = styled.button`
   margin-top: 40px;
   span {
     font-size: 12px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: 600;
     color: ${(props) => props.theme.colors.textColorPrimary};
     position: absolute;
@@ -331,7 +331,7 @@ const GoTop = styled.button`
 
 function StoreRight({ setFilts }) {
   const [dpo, setDPO] = useState(false);
-  const [dpoC, setDPOC] = useState("Preis absteigend");
+  const [dpoC, setDPOC] = useState('Preis absteigend');
   const ref = useRef();
   useOutsideClick(ref, () => {
     setDPO(false);
@@ -340,8 +340,8 @@ function StoreRight({ setFilts }) {
   const scrollPos = useScrollPosition();
   useEffect(() => {
     if (window) {
-      const goTopIcon = document.getElementById("goTop");
-      const goTopIconSpan = document.getElementById("goTopSpan");
+      const goTopIcon = document.getElementById('goTop');
+      const goTopIconSpan = document.getElementById('goTopSpan');
       if (scrollPos > 1151) {
         goTopIcon.style = `position:fixed; bottom:${50}px; right:${
           (window.innerWidth - 1242) / 2
@@ -364,10 +364,10 @@ function StoreRight({ setFilts }) {
             Ecksofas <span>16853 Ergebnisse</span>
           </Header>
           <BreadCrumb>
-            <BreadCrumbItem>Startseite {" >"}</BreadCrumbItem>
-            <BreadCrumbItem>Möbel{" >"}</BreadCrumbItem>
-            <BreadCrumbItem>Wohnzimmer{" >"}</BreadCrumbItem>
-            <BreadCrumbItem>Sofas & Couches{" >"}</BreadCrumbItem>
+            <BreadCrumbItem>Startseite {' >'}</BreadCrumbItem>
+            <BreadCrumbItem>Möbel{' >'}</BreadCrumbItem>
+            <BreadCrumbItem>Wohnzimmer{' >'}</BreadCrumbItem>
+            <BreadCrumbItem>Sofas & Couches{' >'}</BreadCrumbItem>
             <BreadCrumbItem>Ecksofas</BreadCrumbItem>
           </BreadCrumb>
         </LeftS>
@@ -375,10 +375,8 @@ function StoreRight({ setFilts }) {
           <Filters
             onClick={() => {
               setFilts(true);
-              document.getElementsByTagName("body")[0].style =
-                "overflow:hidden";
-            }}
-          >
+              document.getElementsByTagName('body')[0].style = 'overflow:hidden';
+            }}>
             <GiSettingsKnobs size={18} color="#9C9C9C" />
             <span>Filtern</span>
           </Filters>
@@ -395,26 +393,23 @@ function StoreRight({ setFilts }) {
               <DMenu>
                 <button
                   onClick={() => {
-                    setDPOC("Beliebtheit");
+                    setDPOC('Beliebtheit');
                     setDPO(!dpo);
-                  }}
-                >
+                  }}>
                   Beliebtheit
                 </button>
                 <button
                   onClick={() => {
-                    setDPOC("Preis aufsteigend");
+                    setDPOC('Preis aufsteigend');
                     setDPO(!dpo);
-                  }}
-                >
+                  }}>
                   Preis aufsteigend
                 </button>
                 <button
                   onClick={() => {
-                    setDPOC("Preis absteigend");
+                    setDPOC('Preis absteigend');
                     setDPO(!dpo);
-                  }}
-                >
+                  }}>
                   Preis absteigend
                 </button>
               </DMenu>

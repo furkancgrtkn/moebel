@@ -1,17 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
-import { useRouter } from "next/router";
-import useOutsideClick from "../utils/useOutsideClick";
-import Image from "next/image";
-import {
-  BsSearch,
-  BsHeart,
-  BsX,
-  BsList,
-  BsArrowLeftShort,
-} from "react-icons/bs";
-import NavbarLink from "./NavbarLink";
-import Link from "next/link";
+import React, { useState, useRef, useEffect } from 'react';
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
+import useOutsideClick from '../utils/useOutsideClick';
+import Image from 'next/image';
+import { BsSearch, BsHeart, BsX, BsList, BsArrowLeftShort } from 'react-icons/bs';
+import NavbarLink from './NavbarLink';
+import Link from 'next/link';
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -110,7 +104,7 @@ const NavButton = styled.button`
   box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  margin-right: ${(props) => props.openSearch && "0px !important"};
+  margin-right: ${(props) => props.openSearch && '0px !important'};
 
   img {
     object-fit: contain;
@@ -128,7 +122,7 @@ const MenuButton = styled.button`
   box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  margin-right: ${(props) => props.openSearch && "0px !important"};
+  margin-right: ${(props) => props.openSearch && '0px !important'};
 
   img {
     object-fit: contain;
@@ -186,7 +180,7 @@ const Search = styled.input`
   width: calc(100% - 65px);
   font-size: 16px;
   height: 40px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
   border: none;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
@@ -257,7 +251,7 @@ const ShItem = styled.li`
   display: flex;
   align-items: center;
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: ${(props) => props.theme.colors.textColorPrimary};
   padding: 0 12px;
   margin-bottom: 8px;
@@ -302,7 +296,7 @@ const HamMenu = styled.div`
 const HamMenuItem = styled.div`
   text-align: center;
   color: ${(props) => props.theme.colors.textColorPrimary};
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   font-size: 14px;
   margin: 45px 0;
@@ -318,506 +312,506 @@ function Navbar() {
   const [beforeState, setBeforeState] = useState();
   const activeSub = [
     {
-      value: "Möbel",
+      value: 'Möbel',
       leftMenus: [
         {
-          value: "Wohnzimmer",
+          value: 'Wohnzimmer',
           data: [
-            { value: "Sofas & Couches" },
-            { value: "Sessel" },
-            { value: "Stühle" },
-            { value: "Sitzbänke" },
-            { value: "Hocker" },
-            { value: "Stühle" },
-            { value: "Tische" },
-            { value: "Wohnwände" },
-            { value: "Sideboards" },
-            { value: "TV-HiFi-Möbel" },
-            { value: "Regale" },
-            { value: "Vitrine" },
-            { value: "Schränke" },
-            { value: "Teppiche" },
-            { value: "Wohntextilien" },
-            { value: "Wohnzimmerlampen" },
-            { value: "Barmöbel" },
-            { value: "Truhen" },
-            { value: "Kamine" },
-            { value: "Deko" },
-          ],
+            { value: 'Sofas & Couches' },
+            { value: 'Sessel' },
+            { value: 'Stühle' },
+            { value: 'Sitzbänke' },
+            { value: 'Hocker' },
+            { value: 'Stühle' },
+            { value: 'Tische' },
+            { value: 'Wohnwände' },
+            { value: 'Sideboards' },
+            { value: 'TV-HiFi-Möbel' },
+            { value: 'Regale' },
+            { value: 'Vitrine' },
+            { value: 'Schränke' },
+            { value: 'Teppiche' },
+            { value: 'Wohntextilien' },
+            { value: 'Wohnzimmerlampen' },
+            { value: 'Barmöbel' },
+            { value: 'Truhen' },
+            { value: 'Kamine' },
+            { value: 'Deko' }
+          ]
         },
         {
-          value: "Schlafzimmer",
+          value: 'Schlafzimmer',
           data: [
-            { value: "Betten" },
-            { value: "Matratzen" },
-            { value: "Lattenroste" },
-            { value: "Schlafsofas" },
-            { value: "Kleiderschränke" },
-            { value: "Kommoden" },
-            { value: "Nachttische" },
-            { value: "Schlafzimmerserien" },
-            { value: "Schlafzimmertextilien" },
-            { value: "Schlafzimmerlampen" },
-            { value: "Bettbänke & -truhen" },
-            { value: "Teppiche" },
-            { value: "Spiegel" },
-            { value: "Aufbewahrung" },
-            { value: "Deko" },
-          ],
+            { value: 'Betten' },
+            { value: 'Matratzen' },
+            { value: 'Lattenroste' },
+            { value: 'Schlafsofas' },
+            { value: 'Kleiderschränke' },
+            { value: 'Kommoden' },
+            { value: 'Nachttische' },
+            { value: 'Schlafzimmerserien' },
+            { value: 'Schlafzimmertextilien' },
+            { value: 'Schlafzimmerlampen' },
+            { value: 'Bettbänke & -truhen' },
+            { value: 'Teppiche' },
+            { value: 'Spiegel' },
+            { value: 'Aufbewahrung' },
+            { value: 'Deko' }
+          ]
         },
 
         {
-          value: "Esszimmer",
+          value: 'Esszimmer',
           data: [
-            { value: "Esstische" },
-            { value: "Stühle" },
-            { value: "Hocker" },
-            { value: "Essgruppen" },
-            { value: "Sitzbänke" },
-            { value: "Regale" },
-            { value: "Vitrine" },
-            { value: "Schränke" },
-            { value: "Sideboards" },
-            { value: "Barmöbel" },
-            { value: "Servierwagen" },
-            { value: "Lampen" },
-            { value: "Deko" },
-          ],
+            { value: 'Esstische' },
+            { value: 'Stühle' },
+            { value: 'Hocker' },
+            { value: 'Essgruppen' },
+            { value: 'Sitzbänke' },
+            { value: 'Regale' },
+            { value: 'Vitrine' },
+            { value: 'Schränke' },
+            { value: 'Sideboards' },
+            { value: 'Barmöbel' },
+            { value: 'Servierwagen' },
+            { value: 'Lampen' },
+            { value: 'Deko' }
+          ]
         },
 
         {
-          value: "Kinderzimmer",
+          value: 'Kinderzimmer',
           data: [
-            { value: "Babyzimmer" },
-            { value: "Jugendzimmer" },
-            { value: "Kindermatratzen" },
-            { value: "Kinderzimmer-Sets" },
-            { value: "Baby- & Kinderbetten" },
-            { value: "Kinderzimmerschränke" },
-            { value: "Kinderzimmerregale" },
-            { value: "Kinderzimmerkommoden" },
-            { value: "Kindertische" },
-            { value: "Kindersessel & -sofas" },
-            { value: "Kinder- & Hochstühle" },
-            { value: "Kinderzimmerlampen" },
-            { value: "Aufbewahrung" },
-            { value: "Spielzeug" },
-            { value: "Deko" },
-            { value: "Textilien" },
-          ],
+            { value: 'Babyzimmer' },
+            { value: 'Jugendzimmer' },
+            { value: 'Kindermatratzen' },
+            { value: 'Kinderzimmer-Sets' },
+            { value: 'Baby- & Kinderbetten' },
+            { value: 'Kinderzimmerschränke' },
+            { value: 'Kinderzimmerregale' },
+            { value: 'Kinderzimmerkommoden' },
+            { value: 'Kindertische' },
+            { value: 'Kindersessel & -sofas' },
+            { value: 'Kinder- & Hochstühle' },
+            { value: 'Kinderzimmerlampen' },
+            { value: 'Aufbewahrung' },
+            { value: 'Spielzeug' },
+            { value: 'Deko' },
+            { value: 'Textilien' }
+          ]
         },
 
         {
-          value: "Badezimmer",
+          value: 'Badezimmer',
           data: [
-            { value: "Badmöbel-Set" },
-            { value: "Badregale" },
-            { value: "Waschbecken" },
-            { value: "Waschtische" },
-            { value: "Spiegel" },
-            { value: "Armaturen" },
-            { value: "Badewanne & Whirpools" },
-            { value: "Duschen" },
-            { value: "WCs" },
-            { value: "Badlampen" },
-            { value: "Badaccessoires" },
-            { value: "Kinderzimmerlampen" },
-            { value: "Textilien" },
-            { value: "Deko" },
-          ],
+            { value: 'Badmöbel-Set' },
+            { value: 'Badregale' },
+            { value: 'Waschbecken' },
+            { value: 'Waschtische' },
+            { value: 'Spiegel' },
+            { value: 'Armaturen' },
+            { value: 'Badewanne & Whirpools' },
+            { value: 'Duschen' },
+            { value: 'WCs' },
+            { value: 'Badlampen' },
+            { value: 'Badaccessoires' },
+            { value: 'Kinderzimmerlampen' },
+            { value: 'Textilien' },
+            { value: 'Deko' }
+          ]
         },
 
         {
-          value: "Arbeitszimmer",
+          value: 'Arbeitszimmer',
           data: [
-            { value: "Bürotische" },
-            { value: "Bürostühle & Chefsessel" },
-            { value: "Büroschränke" },
-            { value: "Büroregale" },
-            { value: "Büromöbel-Serien" },
-            { value: "Raumteiler" },
-            { value: "Tafel & Boards" },
-            { value: "Sideboards" },
-            { value: "Bürolampen" },
-            { value: "Deko" },
-          ],
+            { value: 'Bürotische' },
+            { value: 'Bürostühle & Chefsessel' },
+            { value: 'Büroschränke' },
+            { value: 'Büroregale' },
+            { value: 'Büromöbel-Serien' },
+            { value: 'Raumteiler' },
+            { value: 'Tafel & Boards' },
+            { value: 'Sideboards' },
+            { value: 'Bürolampen' },
+            { value: 'Deko' }
+          ]
         },
 
         {
-          value: "Flur",
+          value: 'Flur',
           data: [
-            { value: "Gardaroben" },
-            { value: "Schuhschränke" },
-            { value: "Sideboards" },
-            { value: "Regale" },
-            { value: "Flur-Sets" },
-            { value: "Bänke" },
-            { value: "Schränke" },
-            { value: "Flurlampen" },
-            { value: "Fußmatten" },
-            { value: "Schirmständer" },
-            { value: "Deko" },
-          ],
-        },
-      ],
+            { value: 'Gardaroben' },
+            { value: 'Schuhschränke' },
+            { value: 'Sideboards' },
+            { value: 'Regale' },
+            { value: 'Flur-Sets' },
+            { value: 'Bänke' },
+            { value: 'Schränke' },
+            { value: 'Flurlampen' },
+            { value: 'Fußmatten' },
+            { value: 'Schirmständer' },
+            { value: 'Deko' }
+          ]
+        }
+      ]
     },
     {
-      value: "Garten",
+      value: 'Garten',
       leftMenus: [
         {
-          value: "Gartenmöbel",
+          value: 'Gartenmöbel',
           data: [
-            { value: "Gartenmöbel-Sets" },
-            { value: "Loungemöbel" },
-            { value: "Gartensofas" },
-            { value: "Gartensessel" },
-            { value: "Gartenliegen" },
-            { value: "Gartenhocker" },
-            { value: "Gartentische" },
-            { value: "Gartenstühle" },
-            { value: "Gartenbänke" },
-            { value: "Sonneninseln" },
-            { value: "Sonnenliegen" },
-            { value: "Hängematten" },
-            { value: "Hollywoodschaukeln" },
-            { value: "Balkon" },
-          ],
+            { value: 'Gartenmöbel-Sets' },
+            { value: 'Loungemöbel' },
+            { value: 'Gartensofas' },
+            { value: 'Gartensessel' },
+            { value: 'Gartenliegen' },
+            { value: 'Gartenhocker' },
+            { value: 'Gartentische' },
+            { value: 'Gartenstühle' },
+            { value: 'Gartenbänke' },
+            { value: 'Sonneninseln' },
+            { value: 'Sonnenliegen' },
+            { value: 'Hängematten' },
+            { value: 'Hollywoodschaukeln' },
+            { value: 'Balkon' }
+          ]
         },
         {
-          value: "Gartenausstattung",
+          value: 'Gartenausstattung',
           data: [
-            { value: "Sonnenschirme & Markisen" },
-            { value: "Pavillons" },
-            { value: "Zäune & Sichtschutz" },
-            { value: "Grills & Gartenkamine" },
-            { value: "Gewächshäuser" },
-            { value: "Gerätehäuser" },
-            { value: "Gartenhäuser" },
-            { value: "Swimmingpools" },
-            { value: "Brunnen & Teiche" },
-            { value: "Heizstrahler" },
-            { value: "Außenleuchten" },
-            { value: "Outdoorteppiche" },
-            { value: "Pflanzen & Pflanzenpflege" },
-            { value: "Tierbedarf" },
-            { value: "Sitzauflagen" },
-            { value: "Schutzhüllen" },
-          ],
-        },
-      ],
+            { value: 'Sonnenschirme & Markisen' },
+            { value: 'Pavillons' },
+            { value: 'Zäune & Sichtschutz' },
+            { value: 'Grills & Gartenkamine' },
+            { value: 'Gewächshäuser' },
+            { value: 'Gerätehäuser' },
+            { value: 'Gartenhäuser' },
+            { value: 'Swimmingpools' },
+            { value: 'Brunnen & Teiche' },
+            { value: 'Heizstrahler' },
+            { value: 'Außenleuchten' },
+            { value: 'Outdoorteppiche' },
+            { value: 'Pflanzen & Pflanzenpflege' },
+            { value: 'Tierbedarf' },
+            { value: 'Sitzauflagen' },
+            { value: 'Schutzhüllen' }
+          ]
+        }
+      ]
     },
     {
-      value: "Leuchten",
+      value: 'Leuchten',
       leftMenus: [
         {
-          value: "Innenleuchten",
+          value: 'Innenleuchten',
           data: [
-            { value: "Deckenlampen" },
-            { value: "Pendelleuchten" },
-            { value: "Kronenleuchter" },
-            { value: "Tischlampen" },
-            { value: "Stehlampen" },
-            { value: "Wandleuchten" },
-            { value: "Deckenstrahler" },
-            { value: "Einbauleuchten" },
-            { value: "Seil- & Schienensysteme" },
-            { value: "Deckenventilatoren" },
-            { value: "Kinderzimmerlampen" },
-            { value: "Badezimmerlampen" },
-            { value: "Bürolampen" },
-            { value: "Lichterketten" },
-            { value: "Möbelleuchten" },
-          ],
+            { value: 'Deckenlampen' },
+            { value: 'Pendelleuchten' },
+            { value: 'Kronenleuchter' },
+            { value: 'Tischlampen' },
+            { value: 'Stehlampen' },
+            { value: 'Wandleuchten' },
+            { value: 'Deckenstrahler' },
+            { value: 'Einbauleuchten' },
+            { value: 'Seil- & Schienensysteme' },
+            { value: 'Deckenventilatoren' },
+            { value: 'Kinderzimmerlampen' },
+            { value: 'Badezimmerlampen' },
+            { value: 'Bürolampen' },
+            { value: 'Lichterketten' },
+            { value: 'Möbelleuchten' }
+          ]
         },
         {
-          value: "Außenleuchten",
+          value: 'Außenleuchten',
           data: [
-            { value: "Gartenlaternen" },
-            { value: "Außenwandleuchten" },
-            { value: "Außendeckenleuchten" },
-            { value: "Solarleuchten" },
-            { value: "Außenleuchten mit Bewegungsmelder" },
-            { value: "Außenhängeleuchten" },
-            { value: "LED-Außenleuchten" },
-            { value: "Mastleuchter" },
-            { value: "Wege- & Pollerleuchten" },
-            { value: "Gartenbeleuchtung" },
-            { value: "Terassen- & Stufenbeleuchtung" },
-            { value: "Brunnen- & Teichbeleuchtung" },
-            { value: "Bürolampen" },
-            { value: "Lichterketten" },
-            { value: "Campingleuchten & Laternen" },
-          ],
+            { value: 'Gartenlaternen' },
+            { value: 'Außenwandleuchten' },
+            { value: 'Außendeckenleuchten' },
+            { value: 'Solarleuchten' },
+            { value: 'Außenleuchten mit Bewegungsmelder' },
+            { value: 'Außenhängeleuchten' },
+            { value: 'LED-Außenleuchten' },
+            { value: 'Mastleuchter' },
+            { value: 'Wege- & Pollerleuchten' },
+            { value: 'Gartenbeleuchtung' },
+            { value: 'Terassen- & Stufenbeleuchtung' },
+            { value: 'Brunnen- & Teichbeleuchtung' },
+            { value: 'Bürolampen' },
+            { value: 'Lichterketten' },
+            { value: 'Campingleuchten & Laternen' }
+          ]
         },
         {
-          value: "LED-Leuchten",
+          value: 'LED-Leuchten',
           data: [
-            { value: "LED-Stehlampen" },
-            { value: "LED-Leuchtmittel" },
-            { value: "LED--Seil- & Schienensysteme" },
-            { value: "LED-Wandleuchten" },
-            { value: "LED-Einbauleuchten" },
-            { value: "LED-Außenleuchten" },
-          ],
+            { value: 'LED-Stehlampen' },
+            { value: 'LED-Leuchtmittel' },
+            { value: 'LED--Seil- & Schienensysteme' },
+            { value: 'LED-Wandleuchten' },
+            { value: 'LED-Einbauleuchten' },
+            { value: 'LED-Außenleuchten' }
+          ]
         },
         {
-          value: "Leuchtmittel",
+          value: 'Leuchtmittel',
           data: [
-            { value: "Smart Home Leuchtmittel" },
-            { value: "LED- Leuchtmittel" },
-            { value: "E27 Leuchtmittel" },
-            { value: "E14 Leuchtmittel" },
-            { value: "GU10 Leuchtmittel" },
-            { value: "G9 Leuchtmittel" },
-          ],
-        },
-      ],
+            { value: 'Smart Home Leuchtmittel' },
+            { value: 'LED- Leuchtmittel' },
+            { value: 'E27 Leuchtmittel' },
+            { value: 'E14 Leuchtmittel' },
+            { value: 'GU10 Leuchtmittel' },
+            { value: 'G9 Leuchtmittel' }
+          ]
+        }
+      ]
     },
     {
-      value: "Accessoires",
+      value: 'Accessoires',
       leftMenus: [
         {
-          value: "Deko",
+          value: 'Deko',
           data: [
-            { value: "Blumentöpfe" },
-            { value: "Kunstblumen" },
-            { value: "Pflanzen" },
-            { value: "Kerzen & Kerzenständer" },
-            { value: "Bilder & Rahmen" },
-            { value: "Spiegel" },
-            { value: "Wandgestaltung" },
-            { value: "Figuren & Skulpturen" },
-            { value: "Vasen" },
-            { value: "Uhre" },
-            { value: "Weihnachten" },
-            { value: "Ostern" },
-            { value: "Lichterketten" },
-            { value: "Aufbewahrung" },
-            { value: "Windlichter" },
-            { value: "Tabletts" },
-            { value: "Tapeten" },
-            { value: "Wandobjekte" },
-          ],
+            { value: 'Blumentöpfe' },
+            { value: 'Kunstblumen' },
+            { value: 'Pflanzen' },
+            { value: 'Kerzen & Kerzenständer' },
+            { value: 'Bilder & Rahmen' },
+            { value: 'Spiegel' },
+            { value: 'Wandgestaltung' },
+            { value: 'Figuren & Skulpturen' },
+            { value: 'Vasen' },
+            { value: 'Uhre' },
+            { value: 'Weihnachten' },
+            { value: 'Ostern' },
+            { value: 'Lichterketten' },
+            { value: 'Aufbewahrung' },
+            { value: 'Windlichter' },
+            { value: 'Tabletts' },
+            { value: 'Tapeten' },
+            { value: 'Wandobjekte' }
+          ]
         },
         {
-          value: "Badaccessoires",
+          value: 'Badaccessoires',
           data: [
-            { value: "Duschzubehör" },
-            { value: "Badewannenzubehör" },
-            { value: "WC-Zubehör" },
-            { value: "Bad- & Duschhocker" },
-            { value: "Handtuchhalter" },
-            { value: "Seifenspender & -schalen" },
-            { value: "Zahnputzbecher" },
-            { value: "Bad-Accessoires-Set" },
-            { value: "Toilettenpapierhalter" },
-            { value: "WC-Bürsten" },
-            { value: "Haken" },
-            { value: "Wäschekörbe" },
-            { value: "Haltegriffe" },
-            { value: "Waagen" },
-          ],
-        },
-      ],
+            { value: 'Duschzubehör' },
+            { value: 'Badewannenzubehör' },
+            { value: 'WC-Zubehör' },
+            { value: 'Bad- & Duschhocker' },
+            { value: 'Handtuchhalter' },
+            { value: 'Seifenspender & -schalen' },
+            { value: 'Zahnputzbecher' },
+            { value: 'Bad-Accessoires-Set' },
+            { value: 'Toilettenpapierhalter' },
+            { value: 'WC-Bürsten' },
+            { value: 'Haken' },
+            { value: 'Wäschekörbe' },
+            { value: 'Haltegriffe' },
+            { value: 'Waagen' }
+          ]
+        }
+      ]
     },
     {
-      value: "Textilien",
+      value: 'Textilien',
       leftMenus: [
         {
-          value: "Teppiche",
+          value: 'Teppiche',
           data: [
-            { value: "Kurzflor-Teppiche" },
-            { value: "Hochflor-Teppiche" },
-            { value: "Läufer" },
-            { value: "Shaggy-Teppiche" },
-            { value: "Orientteppiche" },
-            { value: "Teppichböden" },
-            { value: "Kinderteppiche" },
-            { value: "Wollteppiche" },
-            { value: "Vintage-Teppiche" },
-            { value: "Runde Teppiche" },
-            { value: "Wandteppiche" },
-            { value: "Bambus-Teppiche" },
-            { value: "Teppichfliesen" },
-            { value: "Fußmatten" },
-            { value: "Felle & Fellteppiche" },
-            { value: "Outdoor-Teppiche" },
-          ],
+            { value: 'Kurzflor-Teppiche' },
+            { value: 'Hochflor-Teppiche' },
+            { value: 'Läufer' },
+            { value: 'Shaggy-Teppiche' },
+            { value: 'Orientteppiche' },
+            { value: 'Teppichböden' },
+            { value: 'Kinderteppiche' },
+            { value: 'Wollteppiche' },
+            { value: 'Vintage-Teppiche' },
+            { value: 'Runde Teppiche' },
+            { value: 'Wandteppiche' },
+            { value: 'Bambus-Teppiche' },
+            { value: 'Teppichfliesen' },
+            { value: 'Fußmatten' },
+            { value: 'Felle & Fellteppiche' },
+            { value: 'Outdoor-Teppiche' }
+          ]
         },
         {
-          value: "Gardinen & Vorhänge",
+          value: 'Gardinen & Vorhänge',
           data: [
-            { value: "Gardinen" },
-            { value: "Schiebegardinen & -vorhänge" },
-            { value: "Scheibengardinen" },
-            { value: "Schlaufenschals" },
-            { value: "Vorhänge" },
-            { value: "Gardinenstangen" },
-            { value: "Fertiggardinen" },
-            { value: "Ösenschals" },
-            { value: "Blickdichte Vorhänge" },
-            { value: "Raffhalter" },
-            { value: "Zubehör für Gardinen" },
-          ],
+            { value: 'Gardinen' },
+            { value: 'Schiebegardinen & -vorhänge' },
+            { value: 'Scheibengardinen' },
+            { value: 'Schlaufenschals' },
+            { value: 'Vorhänge' },
+            { value: 'Gardinenstangen' },
+            { value: 'Fertiggardinen' },
+            { value: 'Ösenschals' },
+            { value: 'Blickdichte Vorhänge' },
+            { value: 'Raffhalter' },
+            { value: 'Zubehör für Gardinen' }
+          ]
         },
         {
-          value: "Kissen",
+          value: 'Kissen',
           data: [
-            { value: "Dekokissen" },
-            { value: "Sitzkissen" },
-            { value: "Kissenbezüge" },
-            { value: "Kinderkissen" },
-            { value: "Kissenfüllung" },
-            { value: "Outdoorkissen" },
-            { value: "Kopfkissen" },
-            { value: "Nackenroller" },
-            { value: "Nackenstützkissen" },
-            { value: "Kopfkissenbezüge" },
-          ],
+            { value: 'Dekokissen' },
+            { value: 'Sitzkissen' },
+            { value: 'Kissenbezüge' },
+            { value: 'Kinderkissen' },
+            { value: 'Kissenfüllung' },
+            { value: 'Outdoorkissen' },
+            { value: 'Kopfkissen' },
+            { value: 'Nackenroller' },
+            { value: 'Nackenstützkissen' },
+            { value: 'Kopfkissenbezüge' }
+          ]
         },
         {
-          value: "Bettwaren",
+          value: 'Bettwaren',
           data: [
-            { value: "Kopfkissen" },
-            { value: "Nackenroller" },
-            { value: "Nackenstützkissen" },
-            { value: "Kopfkissenbezüge" },
-            { value: "Tagesdecken & Bettüberwürfe" },
-            { value: "Daunendecken" },
-            { value: "Naturfaserdecken" },
-            { value: "Vierjahreszeitendecken" },
-            { value: "Microfaserdecken" },
-            { value: "Steppbetten" },
-            { value: "Matrazen" },
-            { value: "Wolldecken" },
-            { value: "Felldecken" },
-            { value: "Plaids" },
-            { value: "Baumwolldecken" },
-            { value: "Fleecedecken" },
-            { value: "Bettwäsche-Garnituren" },
-            { value: "Wendebettwäsche" },
-            { value: "Kopfkissenbezüge" },
-            { value: "Kinderbettwäsche" },
-            { value: "Spannbettlaken" },
-            { value: "Matratzenschoner" },
-          ],
+            { value: 'Kopfkissen' },
+            { value: 'Nackenroller' },
+            { value: 'Nackenstützkissen' },
+            { value: 'Kopfkissenbezüge' },
+            { value: 'Tagesdecken & Bettüberwürfe' },
+            { value: 'Daunendecken' },
+            { value: 'Naturfaserdecken' },
+            { value: 'Vierjahreszeitendecken' },
+            { value: 'Microfaserdecken' },
+            { value: 'Steppbetten' },
+            { value: 'Matrazen' },
+            { value: 'Wolldecken' },
+            { value: 'Felldecken' },
+            { value: 'Plaids' },
+            { value: 'Baumwolldecken' },
+            { value: 'Fleecedecken' },
+            { value: 'Bettwäsche-Garnituren' },
+            { value: 'Wendebettwäsche' },
+            { value: 'Kopfkissenbezüge' },
+            { value: 'Kinderbettwäsche' },
+            { value: 'Spannbettlaken' },
+            { value: 'Matratzenschoner' }
+          ]
         },
         {
-          value: "Jalousien & Rollos",
+          value: 'Jalousien & Rollos',
           data: [
-            { value: "Raffrollos" },
-            { value: "Plissees" },
-            { value: "Doppelrollos" },
-            { value: "Seitenzugrollos" },
-            { value: "Jalousien" },
-            { value: "Springrollos" },
-            { value: "Verdunklungsrollos" },
-          ],
+            { value: 'Raffrollos' },
+            { value: 'Plissees' },
+            { value: 'Doppelrollos' },
+            { value: 'Seitenzugrollos' },
+            { value: 'Jalousien' },
+            { value: 'Springrollos' },
+            { value: 'Verdunklungsrollos' }
+          ]
         },
         {
-          value: "Badtextilien",
+          value: 'Badtextilien',
           data: [
-            { value: "Badgarnituren-Set" },
-            { value: "Läufer & Matten" },
-            { value: "Badteppich" },
-            { value: "Handtuch-Sets" },
-            { value: "Badetücher" },
-            { value: "Saunatücher" },
-            { value: "Strandtücher" },
-            { value: "Gästehandtücher" },
-            { value: "Waschlappen" },
-            { value: "Duschvorhänge" },
-            { value: "Bademäntel" },
-          ],
+            { value: 'Badgarnituren-Set' },
+            { value: 'Läufer & Matten' },
+            { value: 'Badteppich' },
+            { value: 'Handtuch-Sets' },
+            { value: 'Badetücher' },
+            { value: 'Saunatücher' },
+            { value: 'Strandtücher' },
+            { value: 'Gästehandtücher' },
+            { value: 'Waschlappen' },
+            { value: 'Duschvorhänge' },
+            { value: 'Bademäntel' }
+          ]
         },
         {
-          value: "Küchentextilien",
+          value: 'Küchentextilien',
           data: [
-            { value: "Tischläufer" },
-            { value: "Tischdecken" },
-            { value: "Tischsets" },
-            { value: "Servietten" },
-            { value: "Geschirrtücher" },
-            { value: "Küchenschürzen" },
-            { value: "Topflappen & Ofenhandtücher" },
-          ],
-        },
-      ],
+            { value: 'Tischläufer' },
+            { value: 'Tischdecken' },
+            { value: 'Tischsets' },
+            { value: 'Servietten' },
+            { value: 'Geschirrtücher' },
+            { value: 'Küchenschürzen' },
+            { value: 'Topflappen & Ofenhandtücher' }
+          ]
+        }
+      ]
     },
     {
-      value: "Küche",
+      value: 'Küche',
       leftMenus: [
         {
-          value: "Küchenschränke",
+          value: 'Küchenschränke',
           data: [
-            { value: "Küchenzeilen" },
-            { value: "Buffets & Buffetschränke" },
-            { value: "Unterschränke" },
-            { value: "Hängeschränke" },
-            { value: "Anrichten" },
-            { value: "Umbauschränke" },
-            { value: "Vorratsschränke" },
-            { value: "Spülenschränke" },
-          ],
+            { value: 'Küchenzeilen' },
+            { value: 'Buffets & Buffetschränke' },
+            { value: 'Unterschränke' },
+            { value: 'Hängeschränke' },
+            { value: 'Anrichten' },
+            { value: 'Umbauschränke' },
+            { value: 'Vorratsschränke' },
+            { value: 'Spülenschränke' }
+          ]
         },
         {
-          value: "Küchenregale",
+          value: 'Küchenregale',
           data: [
-            { value: "Weinregale" },
-            { value: "Wandregale" },
-            { value: "Standregale" },
-            { value: "Gewürzregale" },
-          ],
+            { value: 'Weinregale' },
+            { value: 'Wandregale' },
+            { value: 'Standregale' },
+            { value: 'Gewürzregale' }
+          ]
         },
         {
-          value: "Bar-Möbel",
+          value: 'Bar-Möbel',
           data: [
-            { value: "Barhocker" },
-            { value: "Stehtische" },
-            { value: "Barschränke" },
-            { value: "Flaschenregale & -halter" },
-          ],
+            { value: 'Barhocker' },
+            { value: 'Stehtische' },
+            { value: 'Barschränke' },
+            { value: 'Flaschenregale & -halter' }
+          ]
         },
         {
-          value: "Aufbewahrung",
+          value: 'Aufbewahrung',
           data: [
-            { value: "Vorratsdosen" },
-            { value: "Brotkästen" },
-            { value: "Etageren" },
-            { value: "Halter & Haken" },
-          ],
+            { value: 'Vorratsdosen' },
+            { value: 'Brotkästen' },
+            { value: 'Etageren' },
+            { value: 'Halter & Haken' }
+          ]
         },
         {
-          value: "Besteck & Geschirr",
+          value: 'Besteck & Geschirr',
           data: [
-            { value: "Kombiservice" },
-            { value: "Kaffeeservice" },
-            { value: "Tafelservice" },
-            { value: "Teller" },
-            { value: "Schüsseln" },
-            { value: "Schalen" },
-            { value: "Tassen" },
-            { value: "Becher" },
-            { value: "Kindergeschirr" },
-            { value: "Messer" },
-            { value: "Besteck-Sets" },
-            { value: "Messerblöcke" },
-            { value: "Besteckkästen" },
-            { value: "Trinkgläser" },
-            { value: "Messer-Sets" },
-            { value: "Weingläserr" },
-            { value: "Spiritousen- & Schnapsgläser" },
-            { value: "Champagner- & Sektgläser" },
-            { value: "Biergläser" },
-            { value: "Karaffen & Dekanter" },
-          ],
-        },
-      ],
+            { value: 'Kombiservice' },
+            { value: 'Kaffeeservice' },
+            { value: 'Tafelservice' },
+            { value: 'Teller' },
+            { value: 'Schüsseln' },
+            { value: 'Schalen' },
+            { value: 'Tassen' },
+            { value: 'Becher' },
+            { value: 'Kindergeschirr' },
+            { value: 'Messer' },
+            { value: 'Besteck-Sets' },
+            { value: 'Messerblöcke' },
+            { value: 'Besteckkästen' },
+            { value: 'Trinkgläser' },
+            { value: 'Messer-Sets' },
+            { value: 'Weingläserr' },
+            { value: 'Spiritousen- & Schnapsgläser' },
+            { value: 'Champagner- & Sektgläser' },
+            { value: 'Biergläser' },
+            { value: 'Karaffen & Dekanter' }
+          ]
+        }
+      ]
     },
     {
-      value: "Marken",
-      leftMenus: [],
-    },
+      value: 'Marken',
+      leftMenus: []
+    }
   ];
   const [menuData, setMenuData] = useState(activeSub);
   const router = useRouter();
@@ -828,11 +822,11 @@ function Navbar() {
   useEffect(() => {}, [inputValue, inputValue2]);
   useOutsideClick(ref, () => {
     setInputValue2(undefined);
-    refInputs.current.value = "";
+    refInputs.current.value = '';
   });
   useOutsideClick(ref2, () => {
     setInputValue(undefined);
-    refInputs.current.value = "";
+    refInputs.current.value = '';
   });
 
   return (
@@ -843,11 +837,9 @@ function Navbar() {
             <MenuButton
               onClick={() => {
                 setOpenHam(true);
-                document.getElementsByTagName("body")[0].style =
-                  "overflow:hidden";
+                document.getElementsByTagName('body')[0].style = 'overflow:hidden';
               }}
-              openSearch={openSearch}
-            >
+              openSearch={openSearch}>
               <BsList size={30} color="#9C9C9C" />
             </MenuButton>
           ) : (
@@ -856,11 +848,9 @@ function Navbar() {
                 setOpenHam(false);
                 setMenuData(activeSub);
                 setOnMenu(null);
-                document.getElementsByTagName("body")[0].style =
-                  "overflow:unset";
+                document.getElementsByTagName('body')[0].style = 'overflow:unset';
               }}
-              openSearch={openSearch}
-            >
+              openSearch={openSearch}>
               <BsX size={30} color="#9C9C9C" />
             </MenuButton>
           )}
@@ -871,42 +861,35 @@ function Navbar() {
               <HamMenuItem
                 onClick={() => {
                   setOnMenu(true);
-                  if (e.value === "Marken") {
-                    router.push("/store/ecksofas");
+                  if (e.value === 'Marken') {
+                    router.push('/store/ecksofas');
                     setOpenHam(false);
                     setMenuData(activeSub);
-                    document.getElementsByTagName("body")[0].style =
-                      "overflow:unset";
+                    document.getElementsByTagName('body')[0].style = 'overflow:unset';
                   } else {
                     if (activeSub.some((k) => k.value === e.value)) {
                       setBeforeState(menuData);
-                      setMenuData(
-                        menuData.filter((d) => d.value === e.value)[0].leftMenus
-                      );
+                      setMenuData(menuData.filter((d) => d.value === e.value)[0].leftMenus);
                     } else {
                       if (menuData[0].data) {
                         setBeforeState(menuData);
-                        setMenuData(
-                          menuData.filter((d) => d.value === e.value)[0].data
-                        );
+                        setMenuData(menuData.filter((d) => d.value === e.value)[0].data);
                       } else {
-                        router.push("/store/ecksofas");
+                        router.push('/store/ecksofas');
                         setOpenHam(false);
                         setMenuData(activeSub);
-                        document.getElementsByTagName("body")[0].style =
-                          "overflow:unset";
+                        document.getElementsByTagName('body')[0].style = 'overflow:unset';
                       }
                     }
                   }
                 }}
-                key={index}
-              >
+                key={index}>
                 {e.value}
               </HamMenuItem>
             ))}
           </HamMenu>
         )}
-        <LogoContainer onClick={() => router.push("/")}>
+        <LogoContainer onClick={() => router.push('/')}>
           <Logo>
             <Image
               src="https://res.cloudinary.com/dhy7yh4aa/image/upload/v1620672673/Polygon_11_c6pgu9.png"
@@ -930,10 +913,7 @@ function Navbar() {
           <>
             <SearchBar>
               <BsSearch size={24} color="#9C9C9C" />
-              <Search
-                ref={refInputs}
-                onChange={(e) => setInputValue(e.target.value)}
-              ></Search>
+              <Search ref={refInputs} onChange={(e) => setInputValue(e.target.value)}></Search>
               <BsX
                 size={25}
                 color="#9C9C9C"
@@ -984,10 +964,7 @@ function Navbar() {
         )}
         <NavButtons>
           {!openSearch && (
-            <NavButton
-              style={{ paddingTop: "1px" }}
-              onClick={() => setOpenSearch(true)}
-            >
+            <NavButton style={{ paddingTop: '1px' }} onClick={() => setOpenSearch(true)}>
               <BsSearch size={24} color="#9C9C9C" />
             </NavButton>
           )}
@@ -1001,27 +978,22 @@ function Navbar() {
                     setOnMenu(null);
                   }
                 }}
-                openSearch={openSearch}
-              >
+                openSearch={openSearch}>
                 <BsArrowLeftShort size={38} color="#9C9C9C" />
               </NavButton>
             )
           ) : (
             <NavButton
-              onClick={() => router.push("/wunschliste")}
-              style={{ paddingTop: "4px" }}
-              openSearch={openSearch}
-            >
+              onClick={() => router.push('/wunschliste')}
+              style={{ paddingTop: '4px' }}
+              openSearch={openSearch}>
               <BsHeart size={24} color="#9C9C9C" />
             </NavButton>
           )}
         </NavButtons>
       </Navigation>
       <SearchBarMob>
-        <Search
-          ref={refInputs}
-          onChange={(e) => setInputValue2(e.target.value)}
-        ></Search>
+        <Search ref={refInputs} onChange={(e) => setInputValue2(e.target.value)}></Search>
         <BsSearch size={24} color="#9C9C9C" />
       </SearchBarMob>
       {inputValue2 && (

@@ -1,8 +1,8 @@
-import React from "react";
-import Layout from "../components/Layout/Layout";
-import styled from "styled-components";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import Layout from '../components/Layout/Layout';
+import styled from 'styled-components';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const ContainerEmpty = styled.div`
   width: 100%;
@@ -23,7 +23,7 @@ const ContainerEmpty = styled.div`
     margin-bottom: 20px;
     margin-top: 30px;
     font-size: 28px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: ${(props) => props.theme.colors.textColorPrimary};
     letter-spacing: 0.08px;
     @media (max-width: 1250px) {
@@ -38,7 +38,7 @@ const ContainerEmpty = styled.div`
     display: flex;
     justify-content: center;
     font-size: 26px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: ${(props) => props.theme.colors.textColorPrimary};
     letter-spacing: 0.08px;
     align-items: center;

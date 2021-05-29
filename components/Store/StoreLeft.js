@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import styled, { css } from "styled-components";
-import { Range, getTrackBackground } from "react-range";
-import { BsX } from "react-icons/bs";
+import React, { useEffect, useRef, useState } from 'react';
+import styled, { css } from 'styled-components';
+import { Range, getTrackBackground } from 'react-range';
+import { BsX } from 'react-icons/bs';
+
 const ContainerWrapper = styled.div`
   display: block;
   @media (max-width: 1250px) {
@@ -9,7 +10,7 @@ const ContainerWrapper = styled.div`
       props.filts &&
       css`
         height: 100vh;
-        display: ${(props) => (props.filts ? "block" : "none")};
+        display: ${(props) => (props.filts ? 'block' : 'none')};
         position: fixed;
         z-index: 89;
         top: 0px;
@@ -30,7 +31,7 @@ const Container = styled.div`
   margin-top: 10px;
   flex-direction: column;
   @media (max-width: 1250px) {
-    display: ${(props) => (props.filts ? "flex" : "none")};
+    display: ${(props) => (props.filts ? 'flex' : 'none')};
     width: 255px;
 
     ${(props) =>
@@ -77,8 +78,8 @@ const CategoriesULIn = styled.ul`
 const CategoriesLi = styled.li``;
 
 const CategoriesLiSpan = styled.span`
-  font-family: "Nunito", sans-serif;
-  font-size: ${(props) => (props.header ? "16px" : "15px")};
+  font-family: 'Nunito', sans-serif;
+  font-size: ${(props) => (props.header ? '16px' : '15px')};
   position: relative;
   display: flex;
   margin-bottom: 6px;
@@ -102,7 +103,7 @@ const Colors = styled.div`
 `;
 
 const ColorsHead = styled.span`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 16px;
   display: flex;
   margin-bottom: 10px;
@@ -151,7 +152,7 @@ const Prices = styled.div`
 `;
 
 const GHead = styled.span`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 16px;
   display: flex;
   margin-bottom: 15px;
@@ -169,7 +170,7 @@ const GHead = styled.span`
 `;
 
 const GHead2 = styled.span`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 16px;
   display: flex;
   margin-bottom: 15px;
@@ -200,7 +201,7 @@ const InputDiv = styled.div`
   display: flex;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   align-items: flex-end;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 14px;
   font-weight: 400;
   user-select: none;
@@ -208,7 +209,7 @@ const InputDiv = styled.div`
 `;
 
 const EInput = styled.input`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 14px;
   display: flex;
   margin-top: 12px;
@@ -257,7 +258,7 @@ const ContsInner = styled.div`
   }
 
   li {
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 15px;
     margin-bottom: 8px;
     position: relative;
@@ -301,10 +302,9 @@ const HoverSpanLeft = styled.span`
   background-color: #a0a0a0;
   position: absolute;
   top: 50%;
-  transform: ${(props) =>
-    props.translateY ? `translateY(-4px)` : `translateY(-4.5px)`};
+  transform: ${(props) => (props.translateY ? `translateY(-4px)` : `translateY(-4.5px)`)};
   left: -15px;
-  display: ${(props) => (props.display ? "block" : "none")};
+  display: ${(props) => (props.displayOn ? 'block' : 'none')};
   border-radius: 6px;
 `;
 
@@ -317,33 +317,34 @@ function StoreLeft({ filts, setFilts }) {
 
   const catData = [
     {
-      value: "Möbel",
+      value: 'Möbel',
       leftMenus: [
         {
-          value: "Wohnzimmer",
+          value: 'Wohnzimmer',
           data: [
             {
-              value: "Sofas & Couches",
+              value: 'Sofas & Couches',
               data: [
-                { id: 1, value: "Ecksofas" },
-                { id: 2, value: "Ecksofas" },
-                { id: 3, value: "Ecksofas" },
-                { id: 4, value: "Ecksofas" },
-                { id: 5, value: "Ecksofas" },
-                { id: 6, value: "Ecksofas" },
-                { id: 7, value: "Ecksofas" },
-                { id: 8, value: "Ecksofas" },
-                { id: 9, value: "Ecksofas" },
-                { id: 10, value: "Ecksofas" },
-              ],
-            },
-          ],
-        },
-      ],
-    },
+                { id: 1, value: 'Ecksofas' },
+                { id: 2, value: 'Ecksofas' },
+                { id: 3, value: 'Ecksofas' },
+                { id: 4, value: 'Ecksofas' },
+                { id: 5, value: 'Ecksofas' },
+                { id: 6, value: 'Ecksofas' },
+                { id: 7, value: 'Ecksofas' },
+                { id: 8, value: 'Ecksofas' },
+                { id: 9, value: 'Ecksofas' },
+                { id: 10, value: 'Ecksofas' }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ];
 
   const [cat, setCat] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [farbe, setFarbe] = useState();
   const [mark, setMark] = useState(false);
   const [mat, setMat] = useState(false);
@@ -360,9 +361,8 @@ function StoreLeft({ filts, setFilts }) {
         <FiltersClose
           onClick={() => {
             setFilts(false);
-            document.getElementsByTagName("body")[0].style = "overflow:unset";
-          }}
-        >
+            document.getElementsByTagName('body')[0].style = 'overflow:unset';
+          }}>
           <BsX size={30} color="#9C9C9C" />
         </FiltersClose>
         <Categories>
@@ -378,23 +378,17 @@ function StoreLeft({ filts, setFilts }) {
                         <CategoriesULIn>
                           {d.data.map((k, i) => (
                             <CategoriesLi key={i}>
-                              <CategoriesLiSpan header>
-                                {k.value}
-                              </CategoriesLiSpan>
+                              <CategoriesLiSpan header>{k.value}</CategoriesLiSpan>
                               <CategoriesULIn>
                                 {k.data.map((l, il) => (
                                   <CategoriesLi key={il}>
                                     <CategoriesLiSpan
                                       header
-                                      onClick={() =>
-                                        setCat(l.id === cat ? "" : l.id)
-                                      }
-                                    >
+                                      onClick={() => setCat(l.id === cat ? '' : l.id)}>
                                       {l.value}
                                       <HoverSpanLeft
                                         translateY
-                                        display={l.id === cat ? true : false}
-                                      ></HoverSpanLeft>
+                                        displayOn={l.id === cat ? true : false}></HoverSpanLeft>
                                     </CategoriesLiSpan>
                                   </CategoriesLi>
                                 ))}
@@ -499,11 +493,10 @@ function StoreLeft({ filts, setFilts }) {
           </GHead>
           <div
             style={{
-              display: "flex",
-              flexWrap: "wrap",
-              marginLeft: "10px",
-            }}
-          >
+              display: 'flex',
+              flexWrap: 'wrap',
+              marginLeft: '10px'
+            }}>
             <Range
               draggableTrack
               values={values}
@@ -519,26 +512,24 @@ function StoreLeft({ filts, setFilts }) {
                   onTouchStart={props.onTouchStart}
                   style={{
                     ...props.style,
-                    height: "20px",
-                    display: "flex",
-                    width: "190px",
-                  }}
-                >
+                    height: '20px',
+                    display: 'flex',
+                    width: '190px'
+                  }}>
                   <div
                     ref={props.ref}
                     style={{
-                      height: "5px",
-                      width: "100%",
-                      borderRadius: "4px",
+                      height: '5px',
+                      width: '100%',
+                      borderRadius: '4px',
                       background: getTrackBackground({
                         values,
-                        colors: ["#ccc", "#9C9C9C", "#ccc"],
+                        colors: ['#ccc', '#9C9C9C', '#ccc'],
                         min: MIN,
-                        max: MAX,
+                        max: MAX
                       }),
-                      alignSelf: "center",
-                    }}
-                  >
+                      alignSelf: 'center'
+                    }}>
                     {children}
                   </div>
                 </div>
@@ -548,16 +539,15 @@ function StoreLeft({ filts, setFilts }) {
                   {...props}
                   style={{
                     ...props.style,
-                    height: "20px",
-                    width: "20px",
-                    borderRadius: "20px",
-                    backgroundColor: "#9C9C9C",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    boxShadow: "0px 2px 6px #AAA",
-                  }}
-                ></div>
+                    height: '20px',
+                    width: '20px',
+                    borderRadius: '20px',
+                    backgroundColor: '#9C9C9C',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    boxShadow: '0px 2px 6px #AAA'
+                  }}></div>
               )}
             />
             <Inputs>
@@ -575,11 +565,10 @@ function StoreLeft({ filts, setFilts }) {
                         : e.target.value < MIN
                         ? MIN
                         : e.target.value,
-                      values[1],
+                      values[1]
                     ])
                   }
-                  value={values[0]}
-                ></EInput>
+                  value={values[0]}></EInput>
                 €
               </InputDiv>
               <InputDiv>
@@ -596,11 +585,10 @@ function StoreLeft({ filts, setFilts }) {
                         ? MAX
                         : e.target.value < MIN
                         ? MIN
-                        : e.target.value,
+                        : e.target.value
                     ])
                   }
-                  value={values[1]}
-                ></EInput>
+                  value={values[1]}></EInput>
                 €
               </InputDiv>
             </Inputs>
@@ -612,7 +600,7 @@ function StoreLeft({ filts, setFilts }) {
             <ul>
               <li onClick={() => setSuch(!such)}>
                 Doppelbett 180x200
-                <HoverSpanLeft display={such}></HoverSpanLeft>
+                <HoverSpanLeft displayOn={such}></HoverSpanLeft>
               </li>
             </ul>
           </ContsInner>
@@ -626,7 +614,7 @@ function StoreLeft({ filts, setFilts }) {
             <ul>
               <li onClick={() => setMark(!mark)}>
                 Ikea
-                <HoverSpanLeft display={mark}></HoverSpanLeft>
+                <HoverSpanLeft displayOn={mark}></HoverSpanLeft>
               </li>
             </ul>
           </ContsInner>
@@ -640,7 +628,7 @@ function StoreLeft({ filts, setFilts }) {
             <ul>
               <li onClick={() => setMat(!mat)}>
                 Doppelbett 180x200
-                <HoverSpanLeft display={mat}></HoverSpanLeft>
+                <HoverSpanLeft displayOn={mat}></HoverSpanLeft>
               </li>
             </ul>
           </ContsInner>

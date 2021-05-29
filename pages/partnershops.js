@@ -1,7 +1,7 @@
-import React from "react";
-import GlobalHeader from "../components/GlobalHeader";
-import styled from "styled-components";
-import Layout from "../components/Layout/Layout";
+import React from 'react';
+import GlobalHeader from '../components/GlobalHeader';
+import styled from 'styled-components';
+import Layout from '../components/Layout/Layout';
 
 const Container = styled.div`
   width: 100%;

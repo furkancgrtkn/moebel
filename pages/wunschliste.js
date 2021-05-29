@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Layout from "../components/Layout/Layout";
-import styled from "styled-components";
-import Link from "next/link";
-import { BsHeart } from "react-icons/bs";
-import GlobalHeader from "../components/GlobalHeader";
+import React, { useState } from 'react';
+import Layout from '../components/Layout/Layout';
+import styled from 'styled-components';
+import Link from 'next/link';
+import { BsHeart } from 'react-icons/bs';
+import GlobalHeader from '../components/GlobalHeader';
 const ContainerEmpty = styled.div`
   width: 100%;
   max-width: 1245px;
@@ -23,7 +23,7 @@ const ContainerEmpty = styled.div`
     margin-bottom: 20px;
     margin-top: 10px;
     font-size: 28px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: ${(props) => props.theme.colors.textColorPrimary};
     letter-spacing: 0.08px;
     @media (max-width: 1250px) {
@@ -39,7 +39,7 @@ const ContainerEmpty = styled.div`
     display: flex;
     justify-content: center;
     font-size: 26px;
-    font-family: "Nunito", sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: ${(props) => props.theme.colors.textColorPrimary};
     letter-spacing: 0.08px;
     align-items: center;
@@ -95,6 +95,7 @@ const Card = styled.div`
 `;
 
 function wunschliste() {
+  // eslint-disable-next-line no-unused-vars
   const [empty, setEmpty] = useState(true);
   return (
     <Layout>

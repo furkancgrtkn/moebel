@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import Link from "next/link";
-import useHover from "../utils/useHover";
-import MenuLeftItem from "./MenuLeftItem";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
+import useHover from '../utils/useHover';
+import MenuLeftItem from './MenuLeftItem';
 const Menu = styled.div`
   position: absolute;
   top: 56px;
@@ -62,7 +62,7 @@ const NavLink = styled.div`
   align-items: center;
   font-size: 16px;
   height: 40px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   color: ${(props) => props.theme.colors.textColorPrimary};
   position: relative;
@@ -158,7 +158,7 @@ const MenuRightListItem = styled.li`
 
 const MenuRightLink = styled.div`
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-weight: 600;
   white-space: nowrap;
   display: block;
@@ -177,9 +177,7 @@ function NavbarLink({ value, activeSub }) {
   const [hoverRefZ, isHover] = useHover();
 
   useEffect(() => {
-    setActive(
-      activeSub.filter((val) => val.value === value)[0].leftMenus[0]?.value
-    );
+    setActive(activeSub.filter((val) => val.value === value)[0].leftMenus[0]?.value);
   }, [isHover]);
 
   return (

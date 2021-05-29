@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Cookies from "universal-cookie";
-import styled from "styled-components";
-import { BsX } from "react-icons/bs";
+import React, { useEffect, useState } from 'react';
+import Cookies from 'universal-cookie';
+import styled from 'styled-components';
+import { BsX } from 'react-icons/bs';
 
 const CookieDiv = styled.div`
   width: 95%;
@@ -21,7 +21,7 @@ const CookieDiv = styled.div`
 `;
 
 const Text = styled.p`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 14px;
   padding-right: 5px;
   color: ${(props) => props.theme.colors.textColorPrimary};
@@ -42,7 +42,7 @@ function CookieModal() {
   const cookies = new Cookies();
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    if (cookies.get("acceptCookies")) {
+    if (cookies.get('acceptCookies')) {
       setOpen(false);
     } else {
       setOpen(true);
@@ -52,15 +52,14 @@ function CookieModal() {
     open && (
       <CookieDiv>
         <Text>
-          Wir verwenden Cookies. Durch die Nutzung dieser Webseite Stimmen Sie
-          unsere Datenschutzrichtlinien zu.
+          Wir verwenden Cookies. Durch die Nutzung dieser Webseite Stimmen Sie unsere
+          Datenschutzrichtlinien zu.
         </Text>
         <CloseButton
           onClick={() => {
-            cookies.set("acceptCookies", true);
+            cookies.set('acceptCookies', true);
             setOpen(false);
-          }}
-        >
+          }}>
           <BsX size={20} color="#9C9C9C" />
         </CloseButton>
       </CookieDiv>
