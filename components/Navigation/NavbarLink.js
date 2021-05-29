@@ -45,7 +45,7 @@ const MenuLeft = styled.div`
 const HoverSpan = styled.span`
   width: 6px;
   height: 6px;
-  box-shadow: 3px 3px 10px rgb(0 0 0 / 16%);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   visibility: hidden;
   background-color: #a0a0a0;
   position: absolute;
@@ -87,7 +87,7 @@ const NavLinkItem = styled.li`
 const HoverSpanLeft = styled.span`
   width: 6px;
   height: 6px;
-  box-shadow: 3px 3px 10px rgb(0 0 0 / 16%);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   background-color: #a0a0a0;
   position: absolute;
   top: 45%;
