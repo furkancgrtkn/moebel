@@ -23,7 +23,7 @@ const TopBanner = styled.div`
   height: 440px;
   background-color: #eed0b3;
   border-radius: 20px;
-  box-shadow: 3px 3px 6px #00000029;
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   margin-bottom: 20px;
 `;
 
@@ -38,7 +38,7 @@ const Cols = styled.div`
   width: 49.55%;
   min-width: 300px;
   background-color: #a1a896;
-  box-shadow: 3px 3px 6px #00000029;
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   height: 440px;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -87,7 +87,7 @@ const SearchCol = styled.div`
   width: 49.55%;
   min-width: 300px;
   background-color: #f9f9f9;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   height: 440px;
   border-radius: 20px;
   margin-bottom: 10px;
