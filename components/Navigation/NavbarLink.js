@@ -53,6 +53,8 @@ const HoverSpan = styled.span`
   left: 50%;
   transform: translateX(-50%);
   border-radius: 6px;
+  overflow: hidden;
+  perspective: 1px;
 `;
 
 const NavLink = styled.div`
@@ -93,6 +95,8 @@ const HoverSpanLeft = styled.span`
   transform: translateY(-50%);
   display: none;
   border-radius: 6px;
+  overflow: hidden;
+  perspective: 1px;
 `;
 
 const MenuLeftList = styled.ul`

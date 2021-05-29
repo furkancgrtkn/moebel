@@ -295,6 +295,8 @@ const FiltersClose = styled.button`
 const HoverSpanLeft = styled.span`
   width: 6px;
   height: 6px;
+  overflow: hidden;
+  perspective: 1px;
   box-shadow: 3px 3px 10px rgb(0 0 0 / 16%);
   background-color: #a0a0a0;
   position: absolute;

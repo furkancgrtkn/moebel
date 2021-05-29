@@ -24,6 +24,8 @@ const HoverSpan = styled.span`
   left: -10px;
   transform: translateY(-50%);
   border-radius: 6px;
+  overflow: hidden;
+  perspective: 1px;
 `;
 
 const FlowSpan = styled.div`

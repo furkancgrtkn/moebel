@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import SwiperCore, { Scrollbar, Autoplay } from "swiper/core";
+import { useEffect, useState } from "react";
 
 SwiperCore.use([Scrollbar, Autoplay]);
 
@@ -69,6 +70,9 @@ const CenterSwip = styled.div`
   margin-bottom: 20px;
   display: flex;
   position: relative;
+  @media (max-width: 1200px) {
+    height: 440px;
+  }
 `;
 
 const SearchCols = styled.div`
@@ -115,6 +119,9 @@ const PartnerSwip = styled.div`
   margin-bottom: 20px;
   display: flex;
   position: relative;
+  @media (max-width: 1200px) {
+    height: 220px;
+  }
 `;
 
 const LongText = styled.p`
@@ -127,6 +134,12 @@ const LongText = styled.p`
 `;
 
 export default function Home() {
+  const [sc, setSc] = useState(true);
+  useEffect(() => {
+    if (window) {
+      setSc(window.innerWidth > 1200 ? true : false);
+    }
+  }, []);
   return (
     <Layout>
       <Head>
@@ -143,7 +156,7 @@ export default function Home() {
           <Swiper
             slidesPerView="auto"
             spaceBetween={10}
-            scrollbar={true}
+            scrollbar={sc}
             className="swiperCenter"
             autoplay={{ delay: 1800 }}
           >
@@ -200,7 +213,7 @@ export default function Home() {
             slidesPerView="auto"
             spaceBetween={10}
             autoplay={{ delay: 1800 }}
-            scrollbar={true}
+            scrollbar={sc}
             className="swiperCenter"
           >
             <SwiperSlide>
