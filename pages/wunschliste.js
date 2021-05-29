@@ -44,7 +44,7 @@ const ContainerEmpty = styled.div`
     letter-spacing: 0.08px;
     align-items: center;
     background-color: ${(props) => props.theme.colors.backgroundPrimary};
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
     border-radius: 15px;
     @media (max-width: 1250px) {
       font-size: 18px;
@@ -82,7 +82,7 @@ const Cards = styled.div`
 `;
 
 const Card = styled.div`
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   width: 299px;
   height: 350px;

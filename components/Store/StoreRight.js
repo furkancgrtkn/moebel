@@ -128,7 +128,7 @@ const Sale = styled.button`
   align-items: center;
   width: 76px;
   height: 40px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   font-size: 16px;
   font-family: "Nunito", sans-serif;
@@ -162,7 +162,7 @@ const Filters = styled.button`
   align-items: center;
   width: 76px;
   height: 40px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   margin-right: 8px;
   svg {
@@ -196,7 +196,7 @@ const DInner = styled.button`
   padding: 0 13px;
   width: 215px;
   height: 40px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   font-size: 12px;
   font-family: "Nunito", sans-serif;
@@ -224,7 +224,7 @@ const DInner = styled.button`
 `;
 
 const DMenu = styled.div`
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   width: 215px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
@@ -259,7 +259,7 @@ const Cards = styled.div`
 `;
 
 const Card = styled.div`
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   width: 299px;
   height: 350px;
@@ -280,7 +280,7 @@ const Card = styled.div`
 `;
 
 const SeeMore = styled.button`
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -297,7 +297,7 @@ const SeeMore = styled.button`
 `;
 
 const GoTop = styled.button`
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -308,7 +308,7 @@ const GoTop = styled.button`
   position: absolute;
   right: 0;
   bottom: -80px;
-  border-radius: 100%;
+  border-radius: 40px;
   margin-top: 40px;
   span {
     font-size: 12px;

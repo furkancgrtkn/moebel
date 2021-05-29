@@ -17,13 +17,13 @@ const MenuLeftLink = styled.div`
 const HoverSpan = styled.span`
   width: 6px;
   height: 6px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 16%);
   background-color: #a0a0a0;
   position: absolute;
   top: 45%;
   left: -10px;
   transform: translateY(-50%);
-  border-radius: 100%;
+  border-radius: 6px;
 `;
 
 const FlowSpan = styled.div`

@@ -25,7 +25,7 @@ const Cards = styled.div`
 `;
 
 const Card = styled.div`
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   width: 195.5px;
   height: 149px;

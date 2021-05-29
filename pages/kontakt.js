@@ -28,7 +28,7 @@ const Inputs = styled.div`
   input {
     width: 100%;
     height: 40px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
     border-radius: 10px;
     margin-bottom: 10px;
     font-family: "Nunito", sans-serif;
@@ -58,7 +58,7 @@ const Btn = styled.button`
   letter-spacing: 0.08px;
   align-items: center;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   margin: 10px auto;
   margin-bottom: 20px;
@@ -70,7 +70,7 @@ const TextAreas = styled.div`
   textarea {
     width: 100%;
     height: 289px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
     border-radius: 10px;
     margin-bottom: 10px;
     font-family: "Nunito", sans-serif;
@@ -94,7 +94,7 @@ const ModalDiv = styled.div`
   margin: auto;
   z-index: 10;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 8px;
   padding: 6px 10px 5px 10px;
   align-items: center;
@@ -117,7 +117,7 @@ const CloseButton = styled.button`
   align-items: center;
   justify-content: center;
   display: flex;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 5px;
   margin-left: auto;
 `;

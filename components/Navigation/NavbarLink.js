@@ -11,7 +11,7 @@ const Menu = styled.div`
   width: 814px;
   height: 0px;
   z-index: 199;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 20px;
   visibility: hidden;
   display: flex;
@@ -45,14 +45,14 @@ const MenuLeft = styled.div`
 const HoverSpan = styled.span`
   width: 6px;
   height: 6px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 16%);
   visibility: hidden;
   background-color: #a0a0a0;
   position: absolute;
   top: 29px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 100%;
+  border-radius: 6px;
 `;
 
 const NavLink = styled.div`
@@ -85,14 +85,14 @@ const NavLinkItem = styled.li`
 const HoverSpanLeft = styled.span`
   width: 6px;
   height: 6px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 16%);
   background-color: #a0a0a0;
   position: absolute;
   top: 45%;
   left: -10px;
   transform: translateY(-50%);
   display: none;
-  border-radius: 100%;
+  border-radius: 6px;
 `;
 
 const MenuLeftList = styled.ul`

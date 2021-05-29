@@ -48,7 +48,7 @@ const Categories = styled.div`
   width: 100%;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   overflow: hidden;
 `;
@@ -91,7 +91,7 @@ const Colors = styled.div`
   width: 100%;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   padding: 21px 34px;
   overflow: hidden;
@@ -130,7 +130,7 @@ const Color = styled.div`
   width: 35px;
   height: 35px;
   box-shadow: 3px 3px 6px #00000029;
-  border-radius: 100%;
+  border-radius: 35px;
   background-color: ${(props) => props.hex && props.hex};
   /* margin-bottom: 10px;
   margin-right: 10px; */
@@ -144,7 +144,7 @@ const Prices = styled.div`
   height: 132px;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   padding: 21px 34px;
   overflow: hidden;
@@ -226,7 +226,7 @@ const Conts = styled.div`
   height: 346px;
   margin-bottom: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   overflow: hidden;
 `;
@@ -276,7 +276,7 @@ const FiltersClose = styled.button`
   align-items: center;
   width: 76px;
   height: 40px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   margin-right: 8px;
   position: fixed;
@@ -295,7 +295,7 @@ const FiltersClose = styled.button`
 const HoverSpanLeft = styled.span`
   width: 6px;
   height: 6px;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.16);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 16%);
   background-color: #a0a0a0;
   position: absolute;
   top: 50%;
@@ -303,7 +303,7 @@ const HoverSpanLeft = styled.span`
     props.translateY ? `translateY(-4px)` : `translateY(-4.5px)`};
   left: -15px;
   display: ${(props) => (props.display ? "block" : "none")};
-  border-radius: 100%;
+  border-radius: 6px;
 `;
 
 function StoreLeft({ filts, setFilts }) {

@@ -107,7 +107,7 @@ const NavButton = styled.button`
   width: 40px;
   height: 40px;
   position: relative;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   margin-right: ${(props) => props.openSearch && "0px !important"};
@@ -125,7 +125,7 @@ const MenuButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   margin-right: ${(props) => props.openSearch && "0px !important"};
@@ -141,7 +141,7 @@ const SearchBar = styled.div`
   max-width: 600px;
   height: 40px;
   position: relative;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   display: flex;
@@ -163,7 +163,7 @@ const SearchBarMob = styled.div`
   max-width: 600px;
   height: 40px;
   position: relative;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   align-items: center;
@@ -202,7 +202,7 @@ const SearchDiv = styled.div`
   left: 50%;
   z-index: 96;
   transform: translateX(-50%);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   display: flex;
@@ -227,7 +227,7 @@ const SearchDivMob = styled.div`
   top: 120px;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   display: none;
