@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import SwiperCore, { Scrollbar, Autoplay } from 'swiper/core';
 import { useEffect, useState } from 'react';
 
