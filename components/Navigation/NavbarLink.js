@@ -87,7 +87,7 @@ const HoverSpanLeft = styled.span`
   width: 6px;
   height: 6px;
   position: absolute;
-  top: 45%;
+  top: 43%;
   left: -12px;
   transform: translateY(-50%);
   display: none;

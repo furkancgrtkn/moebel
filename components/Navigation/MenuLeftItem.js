@@ -19,7 +19,7 @@ const HoverSpan = styled.div`
   width: 6px;
   display: flex;
   position: absolute;
-  top: 45%;
+  top: 43%;
   transform: translateY(-50%);
   left: -12px;
   box-shadow: none;
