@@ -16,7 +16,8 @@ const theme = {
     textColorPrimary: '#9C9C9C',
     texColorPrimaryLight: '#BFBFBF',
     backgroundPrimary: '#f9f9f9',
-    backgroundSecondary: '#F5F5F5'
+    backgroundSecondary: '#F5F5F5',
+    boxShadow: '#F5F5F5'
   }
 };
 
