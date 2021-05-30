@@ -45,16 +45,15 @@ const MenuLeft = styled.div`
 const HoverSpan = styled.span`
   width: 6px;
   height: 6px;
-  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
+  display: flex;
   visibility: hidden;
-  background-color: #a0a0a0;
   position: absolute;
   top: 29px;
   left: 50%;
+  box-shadow: none;
+  color: none;
+  background-color: transparent;
   transform: translateX(-50%);
-  border-radius: 6px;
-  overflow: hidden;
-  perspective: 1px;
 `;
 
 const NavLink = styled.div`
@@ -87,16 +86,14 @@ const NavLinkItem = styled.li`
 const HoverSpanLeft = styled.span`
   width: 6px;
   height: 6px;
-  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
-  background-color: #a0a0a0;
   position: absolute;
   top: 45%;
-  left: -10px;
+  left: -12px;
   transform: translateY(-50%);
   display: none;
-  border-radius: 6px;
-  overflow: hidden;
-  perspective: 1px;
+  box-shadow: none;
+  color: none;
+  background-color: transparent;
 `;
 
 const MenuLeftList = styled.ul`
@@ -151,7 +148,7 @@ const MenuRightListItem = styled.li`
   position: relative;
   :hover {
     ${HoverSpanLeft} {
-      display: block;
+      display: flex;
     }
   }
 `;
@@ -186,7 +183,11 @@ function NavbarLink({ value, activeSub }) {
         <a>
           <NavLink ref={hoverRefZ}>
             {value}
-            <HoverSpan></HoverSpan>
+            <HoverSpan>
+              <svg width="6" height="6" viewBox="0 0 6 6">
+                <circle id="elips" cx="3" cy="3" r="3" fill="#a0a0a0" />
+              </svg>
+            </HoverSpan>
           </NavLink>
         </a>
       </Link>
@@ -218,7 +219,11 @@ function NavbarLink({ value, activeSub }) {
                         <MenuRightLink>{d.value}</MenuRightLink>
                       </a>
                     </Link>
-                    <HoverSpanLeft></HoverSpanLeft>
+                    <HoverSpanLeft>
+                      <svg width="6" height="6" viewBox="0 0 6 6">
+                        <circle id="elips" cx="3" cy="3" r="3" fill="#a0a0a0" />
+                      </svg>
+                    </HoverSpanLeft>
                   </MenuRightListItem>
                 ))}
             </MenuRightList>

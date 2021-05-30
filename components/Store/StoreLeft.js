@@ -296,15 +296,11 @@ const FiltersClose = styled.button`
 const HoverSpanLeft = styled.span`
   width: 6px;
   height: 6px;
-  overflow: hidden;
-  perspective: 1px;
-  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
-  background-color: #a0a0a0;
   position: absolute;
-  top: 50%;
-  transform: ${(props) => (props.translateY ? `translateY(-4px)` : `translateY(-4.5px)`)};
+  top: 56%;
+  transform: ${(props) => (props.translateY ? `translateY(-4px)` : `translateY(-4px)`)};
   left: -15px;
-  display: ${(props) => (props.displayOn ? 'block' : 'none')};
+  display: ${(props) => (props.displayOn ? 'flex' : 'none')};
   border-radius: 6px;
 `;
 
@@ -388,7 +384,11 @@ function StoreLeft({ filts, setFilts }) {
                                       {l.value}
                                       <HoverSpanLeft
                                         translateY
-                                        displayOn={l.id === cat ? true : false}></HoverSpanLeft>
+                                        displayOn={l.id === cat ? true : false}>
+                                        <svg width="6" height="6" viewBox="0 0 6 6">
+                                          <circle id="elips" cx="3" cy="3" r="3" fill="#a0a0a0" />
+                                        </svg>
+                                      </HoverSpanLeft>
                                     </CategoriesLiSpan>
                                   </CategoriesLi>
                                 ))}
@@ -600,7 +600,11 @@ function StoreLeft({ filts, setFilts }) {
             <ul>
               <li onClick={() => setSuch(!such)}>
                 Doppelbett 180x200
-                <HoverSpanLeft displayOn={such}></HoverSpanLeft>
+                <HoverSpanLeft displayOn={such}>
+                  <svg width="6" height="6" viewBox="0 0 6 6">
+                    <circle id="elips" cx="3" cy="3" r="3" fill="#a0a0a0" />
+                  </svg>
+                </HoverSpanLeft>
               </li>
             </ul>
           </ContsInner>
@@ -614,7 +618,11 @@ function StoreLeft({ filts, setFilts }) {
             <ul>
               <li onClick={() => setMark(!mark)}>
                 Ikea
-                <HoverSpanLeft displayOn={mark}></HoverSpanLeft>
+                <HoverSpanLeft displayOn={mark}>
+                  <svg width="6" height="6" viewBox="0 0 6 6">
+                    <circle id="elips" cx="3" cy="3" r="3" fill="#a0a0a0" />
+                  </svg>
+                </HoverSpanLeft>
               </li>
             </ul>
           </ContsInner>
@@ -628,7 +636,11 @@ function StoreLeft({ filts, setFilts }) {
             <ul>
               <li onClick={() => setMat(!mat)}>
                 Doppelbett 180x200
-                <HoverSpanLeft displayOn={mat}></HoverSpanLeft>
+                <HoverSpanLeft displayOn={mat}>
+                  <svg width="6" height="6" viewBox="0 0 6 6">
+                    <circle id="elips" cx="3" cy="3" r="3" fill="#a0a0a0" />
+                  </svg>
+                </HoverSpanLeft>
               </li>
             </ul>
           </ContsInner>

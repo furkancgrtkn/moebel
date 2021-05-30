@@ -14,18 +14,17 @@ const MenuLeftLink = styled.div`
   position: relative;
 `;
 
-const HoverSpan = styled.span`
-  width: 6px;
+const HoverSpan = styled.div`
   height: 6px;
-  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
-  background-color: #a0a0a0;
+  width: 6px;
+  display: flex;
   position: absolute;
   top: 45%;
-  left: -10px;
   transform: translateY(-50%);
-  border-radius: 6px;
-  overflow: hidden;
-  perspective: 1px;
+  left: -12px;
+  box-shadow: none;
+  color: none;
+  background-color: transparent;
 `;
 
 const FlowSpan = styled.div`
@@ -55,7 +54,13 @@ function MenuLeftItem({ value, setActiveSub, active }) {
         <a>
           <MenuLeftLink>
             <FlowSpan>{value}</FlowSpan>
-            {(isHovered || active === value) && <HoverSpan></HoverSpan>}
+            {(isHovered || active === value) && (
+              <HoverSpan>
+                <svg width="6" height="6" viewBox="0 0 6 6">
+                  <circle id="elips" cx="3" cy="3" r="3" fill="#a0a0a0" />
+                </svg>
+              </HoverSpan>
+            )}
           </MenuLeftLink>
         </a>
       </Link>
