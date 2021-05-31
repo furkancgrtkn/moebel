@@ -102,28 +102,6 @@ label {
   border-radius: 50%;
 }
 
-.swiperCenter .swiper-slide {
-  width: unset !important;
-}
-
-.swiperCenter.swiper-container-horizontal > .swiper-scrollbar {
-  height: 12px;
-  width: 49.8%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.swiperCenter .swiper-scrollbar-drag {
-  background-color: #999999;
-  height: 9px;
-}
-
-.swiperCenter .swiper-scrollbar {
-  background-color: #f9f9f9;
-  height: 9px;
-  border: 1px solid #aeaeae1c;
-}
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

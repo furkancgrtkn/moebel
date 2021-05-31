@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Scrollbar, Autoplay } from 'swiper/core';
 import { useEffect, useState } from 'react';
 
@@ -55,22 +54,49 @@ const Header = styled.h3`
 `;
 
 const SlideItem = styled.div`
-  width: 298.5px;
-  height: calc(100% - 30px);
-  margin-bottom: 20px;
+  min-width: 298.5px;
+  margin-right: 10px;
+  height: calc(100% - 15px);
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   background-color: #9c9aca;
+  @media (max-width: 1200px) {
+    height: calc(100%);
+  }
 `;
 
 const CenterSwip = styled.div`
-  width: 100%;
-  height: 470px;
-  margin-bottom: 20px;
   display: flex;
-  position: relative;
+  width: 100%;
+  height: 465px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  ${SlideItem} {
+    :last-child {
+      margin-right: 0;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #aeaeae;
+    border-radius: 9px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f9f9f9;
+    border-radius: 9px;
+    box-shadow: inset 0px 0px 2px #e0e0e0;
+  }
   @media (max-width: 1200px) {
     height: 440px;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
@@ -104,12 +130,15 @@ const SearchColHead = styled.h3`
 `;
 
 const PartnerSlideItem = styled.div`
-  width: 298.5px;
-  height: calc(100% - 30px);
-  margin-bottom: 20px;
+  min-width: 298.5px;
+  margin-right: 10px;
+  height: calc(100% - 15px);
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.05);
   border-radius: 20px;
   background-color: #f0bcbc;
+  @media (max-width: 1200px) {
+    height: calc(100%);
+  }
 `;
 
 const PartnerSwip = styled.div`
@@ -117,9 +146,33 @@ const PartnerSwip = styled.div`
   height: 250px;
   margin-bottom: 20px;
   display: flex;
-  position: relative;
+  overflow-x: auto;
+  ${PartnerSlideItem} {
+    :last-child {
+      margin-right: 0;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #aeaeae;
+    border-radius: 9px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f9f9f9;
+    border-radius: 9px;
+    box-shadow: inset 0px 0px 2px #e0e0e0;
+  }
   @media (max-width: 1200px) {
     height: 220px;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 `;
 
@@ -133,6 +186,7 @@ const LongText = styled.p`
 `;
 
 export default function Home() {
+  // eslint-disable-next-line no-unused-vars
   const [sc, setSc] = useState(true);
   useEffect(() => {
     if (window) {
@@ -152,37 +206,21 @@ export default function Home() {
         </TwoCols>
         <Header>Beliebte Kategorien</Header>
         <CenterSwip>
-          <Swiper
-            slidesPerView="auto"
-            spaceBetween={10}
-            scrollbar={sc}
-            className="swiperCenter"
-            autoplay={{ delay: 1800 }}>
-            <SwiperSlide>
-              <SlideItem></SlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem></SlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem></SlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem></SlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem></SlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem></SlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem></SlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <SlideItem></SlideItem>
-            </SwiperSlide>
-          </Swiper>
+          <SlideItem></SlideItem>
+
+          <SlideItem></SlideItem>
+
+          <SlideItem></SlideItem>
+
+          <SlideItem></SlideItem>
+
+          <SlideItem></SlideItem>
+
+          <SlideItem></SlideItem>
+
+          <SlideItem></SlideItem>
+
+          <SlideItem></SlideItem>
         </CenterSwip>
         <Header>Beliebte Suchanfragen</Header>
         <SearchCols>
@@ -207,37 +245,21 @@ export default function Home() {
         </SearchCols>
         <Header>Partner Shops</Header>
         <PartnerSwip>
-          <Swiper
-            slidesPerView="auto"
-            spaceBetween={10}
-            autoplay={{ delay: 1800 }}
-            scrollbar={sc}
-            className="swiperCenter">
-            <SwiperSlide>
-              <PartnerSlideItem></PartnerSlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <PartnerSlideItem></PartnerSlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <PartnerSlideItem></PartnerSlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <PartnerSlideItem></PartnerSlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <PartnerSlideItem></PartnerSlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <PartnerSlideItem></PartnerSlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <PartnerSlideItem></PartnerSlideItem>
-            </SwiperSlide>
-            <SwiperSlide>
-              <PartnerSlideItem></PartnerSlideItem>
-            </SwiperSlide>
-          </Swiper>
+          <PartnerSlideItem></PartnerSlideItem>
+
+          <PartnerSlideItem></PartnerSlideItem>
+
+          <PartnerSlideItem></PartnerSlideItem>
+
+          <PartnerSlideItem></PartnerSlideItem>
+
+          <PartnerSlideItem></PartnerSlideItem>
+
+          <PartnerSlideItem></PartnerSlideItem>
+
+          <PartnerSlideItem></PartnerSlideItem>
+
+          <PartnerSlideItem></PartnerSlideItem>
         </PartnerSwip>
         <Header>Willkommen bei Moebel-Kaufen.com</Header>
         <LongText>
