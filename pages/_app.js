@@ -4,8 +4,6 @@ import '../styles/globals.css';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
-import 'swiper/components/scrollbar/scrollbar.min.css';
-import 'swiper/swiper.min.css';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());

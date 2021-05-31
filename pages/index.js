@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import Layout from '../components/Layout/Layout';
 import styled from 'styled-components';
-import SwiperCore, { Scrollbar, Autoplay } from 'swiper/core';
 import { useEffect, useState } from 'react';
-
-SwiperCore.use([Scrollbar, Autoplay]);
 
 const Container = styled.div`
   width: 100%;
