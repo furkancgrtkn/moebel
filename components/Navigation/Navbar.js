@@ -13,9 +13,6 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   user-select: none;
-  svg {
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
-  }
 `;
 
 const Navigation = styled.nav`
@@ -106,9 +103,8 @@ const NavButton = styled.button`
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   margin-right: ${(props) => props.openSearch && '0px !important'};
 
-  img {
-    object-fit: contain;
-    border-radius: 10px;
+  svg {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
   }
 `;
 
@@ -124,9 +120,8 @@ const MenuButton = styled.button`
   background-color: ${(props) => props.theme.colors.backgroundPrimary};
   margin-right: ${(props) => props.openSearch && '0px !important'};
 
-  img {
-    object-fit: contain;
-    border-radius: 10px;
+  svg {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
   }
 `;
 
@@ -149,6 +144,7 @@ const SearchBar = styled.div`
 
   svg {
     cursor: pointer;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.16));
   }
 `;
 
